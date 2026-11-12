@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RouteGo | Premium Online Bus Ticket Booking & Coach Travel</title>
+  <meta name="description" content="Book intercity AC sleeper, Volvo multi-axle, and luxury seater bus tickets online with RouteGo. Compare fares, select live seats, and enjoy instant e-tickets.">
+  <meta property="og:title" content="RouteGo | Premium Online Bus Ticket Booking & Coach Travel">
+  <meta property="og:description" content="Search buses, compare fares, select seats, discover offers, and manage your intercity coach journeys effortlessly with RouteGo.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://routego.example.com/">
+  <meta property="og:image" content="assets/images/hero/hero-home1-night-coach.jpg">
+  <link rel="canonical" href="https://routego.example.com/">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "RouteGo Bus Ticket Booking Agency",
+    "url": "https://routego.example.com",
+    "description": "Premium intercity bus ticket booking platform connecting Chennai, Bangalore, Hyderabad, Coimbatore, Madurai, Vijayawada, and Kochi.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-44-4800-9900",
+      "contactType": "customer service",
+      "areaServed": "IN",
+      "availableLanguage": ["English", "Tamil", "Telugu", "Kannada", "Hindi"]
+    }
+  }
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- 2. MAIN NAVIGATION BAR -->
+  <header class="site-header">
+    <div class="container navbar">
+      <!-- TODO: Change brand name or CTA label ("Book Tickets" / "Shop Collection") here -->
+      <a href="index.html" class="navbar__brand" aria-label="RouteGo Home">
+        <span class="navbar__brand-icon" data-icon="bus"></span>
+        <span>Route<span>Go</span></span>
+      </a>
+
+      <nav class="navbar__menu" aria-label="Primary Navigation">
+        <a href="index.html" class="navbar__link is-active">Home</a>
+        <a href="pages/home-2.html" class="navbar__link">Home 2</a>
+        <a href="pages/about.html" class="navbar__link">About</a>
+        <a href="pages/routes-fares.html" class="navbar__link">Routes</a>
+        <a href="pages/offers.html" class="navbar__link">Offers</a>
+        <a href="pages/contact.html" class="navbar__link">Contact</a>
+        <a href="pages/dashboard.html" class="navbar__link">Dashboard</a>
+      </nav>
+
+      <div class="navbar__actions">
+        <button type="button" class="icon-btn js-theme-toggle" aria-label="Switch to Light Mode" title="Switch to Light Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+        </button>
+        <button type="button" class="icon-btn js-rtl-toggle" aria-label="Toggle RTL Direction" title="Toggle RTL Direction">RTL</button>
+        <a href="pages/login.html" class="btn btn--primary btn--sm">Login</a>
+        <button type="button" class="icon-btn navbar__hamburger js-menu-open" aria-label="Open Navigation Menu" aria-expanded="false">
+          <span data-icon="menu"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <aside class="mobile-drawer" aria-hidden="true" aria-label="Mobile Navigation">
+    <div class="mobile-drawer__header">
+      <a href="index.html" class="navbar__brand">
+        <span class="navbar__brand-icon" data-icon="bus"></span>
+        <span>Route<span>Go</span></span>
+      </a>
+      <button type="button" class="icon-btn js-menu-close" aria-label="Close Navigation Menu">
+        <span data-icon="x"></span>
+      </button>
+    </div>
+    <nav class="mobile-drawer__list" aria-label="Mobile Links">
+      <a href="index.html" class="mobile-drawer__link is-active">Home</a>
+      <a href="pages/home-2.html" class="mobile-drawer__link">Home 2</a>
+      <a href="pages/about.html" class="mobile-drawer__link">About</a>
+      <a href="pages/routes-fares.html" class="mobile-drawer__link">Routes</a>
+      <a href="pages/offers.html" class="mobile-drawer__link">Offers</a>
+      <a href="pages/contact.html" class="mobile-drawer__link">Contact</a>
+      <a href="pages/login.html" class="mobile-drawer__link">Login</a>
+      <a href="pages/dashboard.html" class="mobile-drawer__link">Traveler Dashboard</a>
+    </nav>
+    <a href="pages/routes-fares.html" class="btn btn--primary btn--full">Book Tickets</a>
+  </aside>
+
+  <main id="main-content">
+    <!-- 3. HERO SECTION – BUS TICKET SEARCH (Hero Model A: Glassmorphism Booking Panel) -->
+    <section class="hero-home1" id="hero-search">
+      <div class="hero-home1__bg">
+        <picture>
+          <source srcset="assets/images/hero/hero-home1-night-coach-400w.webp 400w, assets/images/hero/hero-home1-night-coach.webp 1200w" sizes="100vw" type="image/webp">
+          <img src="assets/images/hero/hero-home1-night-coach.jpg" alt="Modern multi-axle luxury sleeper bus cruising on a night highway with warm amber headlights" class="js-parallax" width="1400" height="780">
+        </picture>
+      </div>
+      <div class="hero-home1__overlay"></div>
+
+      <div class="container hero-home1__content">
+        <div class="hero-home1__text reveal">
+          <span class="section__eyebrow">
+            <span data-icon="shield"></span>
+            <span>India's Premier Night-Highway Coach Network</span>
+          </span>
+          <h1>Your Journey Begins with One Simple Booking.</h1>
+          <p style="font-size: 1.15rem; margin-block-start: var(--space-2);">
+            Experience convenient, affordable, and ultra-comfortable intercity bus travel. Compare verified Volvo, Scania, and AC Sleeper operators with live seat selection and instant e-tickets.
+          </p>
+        </div>
+
+        <!-- Interactive Glassmorphism Bus Search Panel -->
+        <form class="search-panel js-bus-search-form reveal" aria-label="Bus Ticket Search Form" novalidate>
+          <div class="search-panel__grid">
+            <div class="form-group">
+              <label class="form-label" for="home1FromCity">
+                <span data-icon="mapPin"></span>
+                <span>From City</span>
+              </label>
+              <select id="home1FromCity" name="fromCity" class="form-control" required>
+                <option value="Chennai" selected>Chennai</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Coimbatore">Coimbatore</option>
+                <option value="Madurai">Madurai</option>
+                <option value="Vijayawada">Vijayawada</option>
+                <option value="Kochi">Kochi</option>
+              </select>
+              <span class="form-error">Select departure city.</span>
+            </div>
+
+            <div class="form-group" style="align-items:center;">
+              <span class="sr-only">Swap Departure and Destination Cities</span>
+              <button type="button" class="swap-btn js-swap-cities" aria-label="Swap Locations" title="Swap Locations">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m16 3 4 4-4 4"/>
+                  <path d="M20 7H4"/>
+                  <path d="m8 21-4-4 4-4"/>
+                  <path d="M4 17h16"/>
+                </svg>
+              </button>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="home1ToCity">
+                <span data-icon="mapPin"></span>
+                <span>To City</span>
+              </label>
+              <select id="home1ToCity" name="toCity" class="form-control" required>
+                <option value="Bangalore" selected>Bangalore</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Coimbatore">Coimbatore</option>
+                <option value="Vijayawada">Vijayawada</option>
+                <option value="Madurai">Madurai</option>
+                <option value="Kochi">Kochi</option>
+              </select>
+              <span class="form-error">Destination must differ from origin.</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="home1JourneyDate">
+                <span data-icon="calendar"></span>
+                <span>Journey Date</span>
+              </label>
+              <input type="date" id="home1JourneyDate" name="journeyDate" class="form-control" required>
+              <span class="form-error">Pick a valid date.</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="home1ReturnDate">
+                <span data-icon="calendar"></span>
+                <span>Return Date (Optional)</span>
+              </label>
+              <input type="date" id="home1ReturnDate" name="returnDate" class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="home1Passengers">
+                <span data-icon="users"></span>
+                <span>Number of Passengers</span>
+              </label>
+              <select id="home1Passengers" name="passengers" class="form-control">
+                <option value="1" selected>1 Passenger</option>
+                <option value="2">2 Passengers</option>
+                <option value="3">3 Passengers</option>
+                <option value="4">4 Passengers</option>
+                <option value="5">5 Passengers</option>
+                <option value="6">6 Passengers</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <button type="submit" class="btn btn--primary btn--full" style="min-height:48px;">
+                <span data-icon="search"></span>
+                <span>Search Buses</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="search-panel__suggestions" aria-label="Popular Destination Suggestions">
+            <strong style="color:var(--amber);">Popular Corridors:</strong>
+            <button type="button" class="suggestion-pill js-route-pill" data-from="Chennai" data-to="Bangalore">Chennai ⇄ Bangalore</button>
+            <button type="button" class="suggestion-pill js-route-pill" data-from="Bangalore" data-to="Hyderabad">Bangalore ⇄ Hyderabad</button>
+            <button type="button" class="suggestion-pill js-route-pill" data-from="Chennai" data-to="Coimbatore">Chennai ⇄ Coimbatore</button>
+            <button type="button" class="suggestion-pill js-route-pill" data-from="Hyderabad" data-to="Vijayawada">Hyderabad ⇄ Vijayawada</button>
+            <button type="button" class="suggestion-pill js-route-pill" data-from="Madurai" data-to="Chennai">Madurai ⇄ Chennai</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- 4. TRUST & BOOKING BENEFITS (Full-Bleed Telemetry Stat Band) -->
+    <section class="telemetry-band" aria-labelledby="trust-heading">
+      <div class="container">
+        <h2 id="trust-heading" class="sr-only">Trust &amp; Booking Benefits</h2>
+        <div class="telemetry-band__grid">
+          <div class="telemetry-item reveal">
+            <span style="color:var(--teal);margin-block-end:0.4rem;" data-icon="users"></span>
+            <div class="telemetry-item__value js-counter" data-target="10000" data-suffix="+">10,000+</div>
+            <div class="telemetry-item__label">10,000+ Happy Travelers</div>
+          </div>
+          <div class="telemetry-item reveal">
+            <span style="color:var(--amber);margin-block-end:0.4rem;" data-icon="bus"></span>
+            <div class="telemetry-item__value js-counter" data-target="500" data-suffix="+">500+</div>
+            <div class="telemetry-item__label">500+ Daily Bus Services</div>
+          </div>
+          <div class="telemetry-item reveal">
+            <span style="color:var(--coral);margin-block-end:0.4rem;" data-icon="compass"></span>
+            <div class="telemetry-item__value js-counter" data-target="100" data-suffix="+">100+</div>
+            <div class="telemetry-item__label">100+ Popular Routes</div>
+          </div>
+          <div class="telemetry-item reveal">
+            <span style="color:var(--teal);margin-block-end:0.4rem;" data-icon="shield"></span>
+            <div class="telemetry-item__value">100% PCI-DSS</div>
+            <div class="telemetry-item__label">Secure Online Payments</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="road-divider" aria-hidden="true"><div class="road-divider__stripes"></div></div>
+
+    <!-- 5. POPULAR ROUTES -->
+    <section class="section" id="popular-routes" aria-labelledby="popular-routes-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__eyebrow">Express Corridors</span>
+          <h2 class="section__title" id="popular-routes-heading">Popular Routes</h2>
+          <p class="section__subtitle">High-frequency intercity bus corridors with live GPS tracking, verified boarding lounges, and guaranteed berths.</p>
+        </div>
+
+        <div class="grid-3">
+          <!-- Route 1: Chennai to Bangalore -->
+          <article class="tilt-card reveal">
+            <div class="tilt-card__media">
+              <picture>
+                <source srcset="assets/images/routes/route-chennai-bangalore-400w.webp 400w, assets/images/routes/route-chennai-bangalore.webp 800w" sizes="(max-width: 640px) 100vw, 400px" type="image/webp">
+                <img src="assets/images/routes/route-chennai-bangalore.jpg" alt="Express coach traveling on Chennai to Bangalore NH48 six-lane highway" loading="lazy" width="800" height="520">
+              </picture>
+            </div>
+            <span class="tilt-card__badge">NH-48 Express • 42 Daily Coaches</span>
+            <h3 class="tilt-card__title">Chennai to Bangalore</h3>
+            <svg class="route-line-svg" viewBox="0 0 220 26" aria-hidden="true">
+              <line x1="20" y1="13" x2="200" y2="13" class="route-line-svg__track"/>
+              <line x1="20" y1="13" x2="200" y2="13" class="route-line-svg__active"/>
+              <circle cx="20" cy="13" r="5" class="route-line-svg__dot"/>
+              <circle cx="200" cy="13" r="5" class="route-line-svg__dot"/>
+            </svg>
+            <div class="tilt-card__meta">
+              <span><strong>Duration:</strong> 5h 45m – 6h 30m</span>
+              <span>•</span>
+              <span>Volvo Sleeper, AC Seater, Non-AC</span>
+            </div>
+            <div class="tilt-card__price">Starting at ₹520</div>
+            <div class="tilt-card__actions">
+              <a href="pages/search-results.html" class="btn btn--primary btn--sm" data-route-from="Chennai" data-route-to="Bangalore">
+                <span>View Buses</span>
+                <span data-icon="arrowRight"></span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Route 2: Bangalore to Hyderabad -->
+          <article class="tilt-card reveal">
+            <div class="tilt-card__media">
+              <picture>
+                <source srcset="assets/images/routes/route-bangalore-hyderabad-400w.webp 400w, assets/images/routes/route-bangalore-hyderabad.webp 800w" sizes="(max-width: 640px) 100vw, 400px" type="image/webp">
+                <img src="assets/images/routes/route-bangalore-hyderabad.jpg" alt="Night cruiser sleeper coach on the Bangalore to Hyderabad NH44 expressway" loading="lazy" width="800" height="520">
+              </picture>
+            </div>
+            <span class="tilt-card__badge">NH-44 Corridor • 38 Daily Coaches</span>
+            <h3 class="tilt-card__title">Bangalore to Hyderabad</h3>
+            <svg class="route-line-svg" viewBox="0 0 220 26" aria-hidden="true">
+              <line x1="20" y1="13" x2="200" y2="13" class="route-line-svg__track"/>
+              <line x1="20" y1="13" x2="200" y2="13" class="route-line-svg__active"/>
+              <circle cx="20" cy="13" r="5" class="route-line-svg__dot"/>
+              <circle cx="200" cy="13" r="5" class="route-line-svg__dot"/>
+            </svg>
+            <div class="tilt-card__meta">
+              <span><strong>Duration:</strong> 8h 30m – 9h 15m</span>
+              <span>•</span>
+              <span>Scania Multi-Axle, AC Sleeper</span>
+            </div>
+            <div class="tilt-card__price">Starting at ₹1,080</div>
+            <div class="tilt-card__actions">
+              <a href="pages/search-results.html" class="btn btn--primary btn--sm" data-route-from="Bangalore" data-route-to="Hyderabad">
+                <span>View Buses</span>
+                <span data-icon="arrowRight"></span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Route 3: Chennai to Coimbatore -->
+          <article class="tilt-card reveal">
+            <div class="tilt-card__media">
+              <picture>
+                <source srcset="assets/images/routes/route-chennai-coimbatore-400w.webp 400w, assets/images/routes/route-chennai-coimbatore.webp 800w" sizes="(max-width: 640px) 100vw, 400px" type="image/webp">
+                <img src="assets/images/routes/route-chennai-coimbatore.jpg" alt="Luxury Volvo coach approaching Coimbatore Western Ghats highway from Chennai" loading="lazy" width="800" height="520">
+              </picture>
+            </div>
+            <span class="tilt-card__badge">Kongu Express • 34 Daily Coaches</span>
+            <h3 class="tilt-card__title">Chennai to Coimbatore</h3>
+            <svg class="route-line-svg" viewBox="0 0 220 26" aria-hidden="true">
+              <line x1="20" y1="13" x2="200" y2="13" class="route-line-svg__track"/>
+              <line x1="20" y1="13" x2="200" y2="13" class="route-line-svg__active"/>
+              <circle cx="20" cy="13" r="5" class="route-line-svg__dot"/>
+              <circle cx="200" cy="13" r="5" class="route-line-svg__dot"/>
+            </svg>
+            <div class="tilt-card__meta">
+              <span><strong>Duration:</strong> 7h 30m – 8h 15m</span>
+              <span>•</span>
+              <span>Volvo B11R, AC Sleeper, Seater</span>
+            </div>
+            <div class="tilt-card__price">Starting at ₹790</div>
+            <div class="tilt-card__actions">
+              <a href="pages/search-results.html" class="btn btn--primary btn--sm" data-route-from="Chennai" data-route-to="Coimbatore">
+                <span>View Buses</span>
+                <span data-icon="arrowRight"></span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Route 4: Hyderabad to Vijayawada -->
+          <article class="tilt-card reveal">
+            <div class="tilt-card__media">
+              <picture>
+                <source srcset="assets/images/routes/route-hyderabad-vijayawada-400w.webp 400w, assets/images/routes/route-hyderabad-vijayawada.webp 800w" sizes="(max-width: 640px) 100vw, 400px" type="image/webp">
+                <img src="assets/images/routes/route-hyderabad-vijayawada.jpg" alt="Executive AC coach cruising between Hyderabad and Vijayawada on NH65" loading="lazy" width="800" height="520">
+              </picture>
+            </div>
+            <span class="tilt-card__badge">NH-65 Rapid • 45 Daily Coaches</span>
+            <h3 class="tilt-card__title">Hyderabad to Vijayawada</h3>
+            <svg class="route-line-svg" viewBox="0 0 220 26" aria-hidden="true">
+              <line x1="20" y1="13" x2="200" y2="13" class="route-line-svg__track"/>
+              <line x1="20" y1="13" x2="200" y2="13" class="route-line-svg__active"/>
+              <circle cx="20" cy="13" r="5" class="route-line-svg__dot"/>
+              <circle cx="200" cy="13" r="5" class="route-line-svg__dot"/>
+            </svg>
+            <div class="tilt-card__meta">
+              <span><strong>Duration:</strong> 4h 45m – 5h 15m</span>
+              <span>•</span>
+              <span>AC Executive Seater, Volvo Coach</span>
+            </div>
+            <div class="tilt-card__price">Starting at ₹580</div>
+            <div class="tilt-card__actions">
+              <a href="pages/search-results.html" class="btn btn--primary btn--sm" data-route-from="Hyderabad" data-route-to="Vijayawada">
+                <span>View Buses</span>
+                <span data-icon="arrowRight"></span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Route 5: Madurai to Chennai -->
+          <article class="tilt-card reveal">
+            <div class="tilt-card__media">
+              <picture>
+                <source srcset="assets/images/routes/route-madurai-chennai-400w.webp 400w, assets/images/routes/route-madurai-chennai.webp 800w" sizes="(max-width: 640px) 100vw, 400px" type="image/webp">
+                <img src="assets/images/routes/route-madurai-chennai.jpg" alt="Deluxe sleeper bus traveling from Madurai to Chennai at dusk" loading="lazy" width="800" height="520">
+              </picture>
+            </div>
+            <span class="tilt-card__badge">Southern Trunk • 36 Daily Coaches</span>
+            <h3 class="tilt-card__title">Madurai to Chennai</h3>
+            <svg class="route-line-svg" viewBox="0 0 220 26" aria-hidden="true">
+              <line x1="20" y1="13" x2="200" y2="13" class="route-line-svg__track"/>
+              <line x1="20" y1="13" x2="200" y2="13" class="route-line-svg__active"/>
+              <circle cx="20" cy="13" r="5" class="route-line-svg__dot"/>
+              <circle cx="200" cy="13" r="5" class="route-line-svg__dot"/>
+            </svg>
+            <div class="tilt-card__meta">
+              <span><strong>Duration:</strong> 7h 15m – 7h 50m</span>
+              <span>•</span>
+              <span>Mercedes-Benz Sleeper, Non-AC Sleeper</span>
+            </div>
+            <div class="tilt-card__price">Starting at ₹680</div>
+            <div class="tilt-card__actions">
+              <a href="pages/search-results.html" class="btn btn--primary btn--sm" data-route-from="Madurai" data-route-to="Chennai">
+                <span>View Buses</span>
+                <span data-icon="arrowRight"></span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. FEATURED BUS OPERATORS -->
+    <section class="section section--alt" id="featured-operators" aria-labelledby="operators-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__eyebrow">Verified Fleet Partners</span>
+          <h2 class="section__title" id="operators-heading">Featured Bus Operators</h2>
+          <p class="section__subtitle">We partner exclusively with top-rated intercity fleet operators audited for punctuality, hygiene, and highway safety.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="tilt-card reveal">
+            <div class="tilt-card__media" style="height:160px;">
+              <picture>
+                <source srcset="assets/images/operators/operator-kpn-royal-400w.webp 400w, assets/images/operators/operator-kpn-royal.webp 600w" sizes="360px" type="image/webp">
+                <img src="assets/images/operators/operator-kpn-royal.jpg" alt="KPN Royal Travels luxury multi-axle coach" loading="lazy" width="600" height="400">
+              </picture>
+            </div>
+            <span class="tilt-card__badge tilt-card__badge--amber">★ 4.8 / 5.0 (4,200+ Reviews)</span>
+            <h3 class="tilt-card__title">KPN Royal Travels</h3>
+            <p><strong>Bus Types:</strong> Volvo B11R Multi-Axle AC Sleeper, Executive AC Seater</p>
+            <p style="font-size:0.86rem;margin-block-start:0.4rem;">Highlights: Private AC boarding lounges, fresh sanitized linens, 99.2% on-time arrival record.</p>
+          </article>
+
+          <article class="tilt-card reveal">
+            <div class="tilt-card__media" style="height:160px;">
+              <picture>
+                <source srcset="assets/images/operators/operator-orange-tours-400w.webp 400w, assets/images/operators/operator-orange-tours.webp 600w" sizes="360px" type="image/webp">
+                <img src="assets/images/operators/operator-orange-tours.jpg" alt="Orange Starliner Tours Scania highway sleeper coach" loading="lazy" width="600" height="400">
+              </picture>
+            </div>
+            <span class="tilt-card__badge tilt-card__badge--amber">★ 4.9 / 5.0 (5,180+ Reviews)</span>
+            <h3 class="tilt-card__title">Orange Starliner Tours</h3>
+            <p><strong>Bus Types:</strong> Scania Multi-Axle Sleeper, BharatBenz AC Seater</p>
+            <p style="font-size:0.86rem;margin-block-start:0.4rem;">Highlights: Complimentary snack kit, live GPS family sharing link, dual-driver safety protocol.</p>
+          </article>
+
+          <article class="tilt-card reveal">
+            <div class="tilt-card__media" style="height:160px;">
+              <picture>
+                <source srcset="assets/images/operators/operator-parveen-lux-400w.webp 400w, assets/images/operators/operator-parveen-lux.webp 600w" sizes="360px" type="image/webp">
+                <img src="assets/images/operators/operator-parveen-lux.jpg" alt="Parveen Mercedes-Benz luxury intercity coach" loading="lazy" width="600" height="400">
+              </picture>
+            </div>
+            <span class="tilt-card__badge tilt-card__badge--amber">★ 4.8 / 5.0 (3,640+ Reviews)</span>
+            <h3 class="tilt-card__title">Parveen Mercedes-Benz Coach</h3>
+            <p><strong>Bus Types:</strong> Mercedes-Benz Tri-Axle Sleeper, Semi-Sleeper Deluxe</p>
+            <p style="font-size:0.86rem;margin-block-start:0.4rem;">Highlights: Dedicated female-safe berth zoning, USB-C fast charging at every berth.</p>
+          </article>
+        </div>
+
+        <div style="text-align:center;margin-block-start:var(--space-5);" class="reveal">
+          <a href="pages/routes-fares.html" class="btn btn--secondary">
+            <span>View All Operators</span>
+            <span data-icon="arrowRight"></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. WHY CHOOSE ROUTEGO? -->
+    <section class="section" id="why-choose-us" aria-labelledby="why-choose-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__eyebrow">The RouteGo Advantage</span>
+          <h2 class="section__title" id="why-choose-heading">Why Choose RouteGo?</h2>
+          <p class="section__subtitle">Engineered for modern highway travelers who demand transparency, comfort, and reliability on every trip.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="tilt-card reveal">
+            <div class="tilt-card__icon" data-icon="zap"></div>
+            <h3 class="tilt-card__title">Easy Online Booking</h3>
+            <p>Book your preferred lower or upper deck berth in under 60 seconds with instant SMS &amp; PDF e-ticket delivery.</p>
+          </article>
+
+          <article class="tilt-card reveal">
+            <div class="tilt-card__icon" data-icon="compass"></div>
+            <h3 class="tilt-card__title">Wide Bus Network</h3>
+            <p>Connect seamlessly across 100+ intercity corridors and 500+ daily departures spanning South &amp; Central India.</p>
+          </article>
+
+          <article class="tilt-card reveal">
+            <div class="tilt-card__icon" data-icon="tag"></div>
+            <h3 class="tilt-card__title">Transparent Ticket Pricing</h3>
+            <p>Zero hidden surcharges at checkout. Compare operator fares side by side with upfront tax breakdown.</p>
+          </article>
+
+          <article class="tilt-card reveal">
+            <div class="tilt-card__icon" data-icon="shield"></div>
+            <h3 class="tilt-card__title">Secure Payments</h3>
+            <p>256-bit encrypted checkout supporting UPI, Credit/Debit Cards, Net Banking, and Instant Digital Wallets.</p>
+          </article>
+
+          <article class="tilt-card reveal">
+            <div class="tilt-card__icon" data-icon="headphones"></div>
+            <h3 class="tilt-card__title">24/7 Customer Support</h3>
+            <p>Round-the-clock highway travel desk assisting with boarding point navigation, delays, and live rescheduling.</p>
+          </article>
+
+          <article class="tilt-card reveal">
+            <div class="tilt-card__icon" data-icon="refreshCw"></div>
+            <h3 class="tilt-card__title">Flexible Cancellation</h3>
+            <p>Cancel directly from your Traveler Dashboard with transparent policy tiers and automated refund tracking.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="road-divider" aria-hidden="true"><div class="road-divider__stripes"></div></div>
+
+    <!-- 8. SPECIAL OFFERS & TRAVEL DEALS -->
+    <section class="section section--alt" id="special-offers" aria-labelledby="offers-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__eyebrow">Verified Promo Codes</span>
+          <h2 class="section__title" id="offers-heading">Special Offers &amp; Travel Deals</h2>
+          <p class="section__subtitle">Activate a promo code below with one click — it automatically applies when you reach the payment screen.</p>
+        </div>
+
+        <div class="grid-4">
+          <article class="tilt-card tilt-card--ticket reveal">
+            <span class="tilt-card__badge tilt-card__badge--coral">25% OFF • Up to ₹400</span>
+            <h3 class="tilt-card__title">First Booking Discount</h3>
+            <p>Save 25% on your inaugural RouteGo AC Sleeper or Volvo booking.</p>
+            <div class="tilt-card__meta">
+              <span>Code: <strong class="mono" style="color:var(--amber);">FIRST25</strong></span>
+              <span>•</span>
+              <span>Valid till: 31 Dec 2026</span>
+            </div>
+            <div class="tilt-card__actions">
+              <a href="pages/routes-fares.html" class="btn btn--primary btn--sm" data-promo-code="FIRST25">Book Now</a>
+            </div>
+          </article>
+
+          <article class="tilt-card tilt-card--ticket reveal">
+            <span class="tilt-card__badge">15% OFF • Fri–Sun</span>
+            <h3 class="tilt-card__title">Weekend Travel Offers</h3>
+            <p>Enjoy 15% savings on all Friday, Saturday, and Sunday night departures.</p>
+            <div class="tilt-card__meta">
+              <span>Code: <strong class="mono" style="color:var(--amber);">WEEKEND15</strong></span>
+              <span>•</span>
+              <span>Valid till: 15 Dec 2026</span>
+            </div>
+            <div class="tilt-card__actions">
+              <a href="pages/routes-fares.html" class="btn btn--primary btn--sm" data-promo-code="WEEKEND15">Book Now</a>
+            </div>
+          </article>
+
+          <article class="tilt-card tilt-card--ticket reveal">
+            <span class="tilt-card__badge tilt-card__badge--amber">20% OFF • Festive</span>
+            <h3 class="tilt-card__title">Festival Season Deals</h3>
+            <p>Beat holiday rush pricing with 20% off advance bookings across all corridors.</p>
+            <div class="tilt-card__meta">
+              <span>Code: <strong class="mono" style="color:var(--amber);">FESTIVAL20</strong></span>
+              <span>•</span>
+              <span>Valid till: 25 Dec 2026</span>
+            </div>
+            <div class="tilt-card__actions">
+              <a href="pages/routes-fares.html" class="btn btn--primary btn--sm" data-promo-code="FESTIVAL20">Book Now</a>
+            </div>
+          </article>
+
+          <article class="tilt-card tilt-card--ticket reveal">
+            <span class="tilt-card__badge">Flat ₹300 OFF</span>
+            <h3 class="tilt-card__title">Group Booking Discounts</h3>
+            <p>Traveling with 3 or more friends or family? Get flat ₹300 off instantly.</p>
+            <div class="tilt-card__meta">
+              <span>Code: <strong class="mono" style="color:var(--amber);">GROUP300</strong></span>
+              <span>•</span>
+              <span>Valid till: 31 Dec 2026</span>
+            </div>
+            <div class="tilt-card__actions">
+              <a href="pages/routes-fares.html" class="btn btn--primary btn--sm" data-promo-code="GROUP300">Book Now</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. BUS CATEGORIES / TRAVEL COMFORT -->
+    <section class="section" id="bus-categories" aria-labelledby="categories-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__eyebrow">Fleet Classes</span>
+          <h2 class="section__title" id="categories-heading">Bus Categories / Travel Comfort</h2>
+          <p class="section__subtitle">From executive multi-axle sleepers to economical daytime express seaters, choose the coach built for your journey.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="tilt-card reveal">
+            <div class="tilt-card__media">
+              <picture>
+                <source srcset="assets/images/fleet/fleet-ac-sleeper-400w.webp 400w, assets/images/fleet/fleet-ac-sleeper.webp 800w" sizes="400px" type="image/webp">
+                <img src="assets/images/fleet/fleet-ac-sleeper.jpg" alt="AC Sleeper bus cabin with plush berths and warm reading lamps" loading="lazy" width="800" height="520">
+              </picture>
+            </div>
+            <span class="tilt-card__badge">2+1 Berth Layout</span>
+            <h3 class="tilt-card__title">AC Sleeper</h3>
+            <p>Full-length flat memory-foam berths with climate control, privacy curtains, fresh blankets, and personal reading lamps.</p>
+          </article>
+
+          <article class="tilt-card reveal">
+            <div class="tilt-card__media">
+              <picture>
+                <source srcset="assets/images/fleet/fleet-nonac-sleeper-400w.webp 400w, assets/images/fleet/fleet-nonac-sleeper.webp 800w" sizes="400px" type="image/webp">
+                <img src="assets/images/fleet/fleet-nonac-sleeper.jpg" alt="Non-AC Sleeper bus with ventilated panoramic sliding windows" loading="lazy" width="800" height="520">
+              </picture>
+            </div>
+            <span class="tilt-card__badge">Natural Airflow</span>
+            <h3 class="tilt-card__title">Non-AC Sleeper</h3>
+            <p>Spacious air-suspension sleeper berths with wide sliding tinted windows and individual charging ports for budget overnight travel.</p>
+          </article>
+
+          <article class="tilt-card reveal">
+            <div class="tilt-card__media">
+              <picture>
+                <source srcset="assets/images/fleet/fleet-ac-seater-400w.webp 400w, assets/images/fleet/fleet-ac-seater.webp 800w" sizes="400px" type="image/webp">
+                <img src="assets/images/fleet/fleet-ac-seater.jpg" alt="AC Seater coach interior with reclining ergonomic seats" loading="lazy" width="800" height="520">
+              </picture>
+            </div>
+            <span class="tilt-card__badge">145° Recliner</span>
+            <h3 class="tilt-card__title">AC Seater</h3>
+            <p>Ergonomic push-back leatherette seats with calf support, adjustable headrests, and dual-zone air conditioning.</p>
+          </article>
+
+          <article class="tilt-card reveal">
+            <div class="tilt-card__media">
+              <picture>
+                <source srcset="assets/images/fleet/fleet-nonac-seater-400w.webp 400w, assets/images/fleet/fleet-nonac-seater.webp 800w" sizes="400px" type="image/webp">
+                <img src="assets/images/fleet/fleet-nonac-seater.jpg" alt="Non-AC Seater daytime intercity express bus" loading="lazy" width="800" height="520">
+              </picture>
+            </div>
+            <span class="tilt-card__badge">Daytime Express</span>
+            <h3 class="tilt-card__title">Non-AC Seater</h3>
+            <p>High-frequency daytime intercity coaches offering dependable, pocket-friendly point-to-point connectivity.</p>
+          </article>
+
+          <article class="tilt-card reveal">
+            <div class="tilt-card__media">
+              <picture>
+                <source srcset="assets/images/fleet/fleet-volvo-premium-400w.webp 400w, assets/images/fleet/fleet-volvo-premium.webp 800w" sizes="400px" type="image/webp">
+                <img src="assets/images/fleet/fleet-volvo-premium.jpg" alt="Volvo and Scania multi-axle premium luxury highway coach" loading="lazy" width="800" height="520">
+              </picture>
+            </div>
+            <span class="tilt-card__badge tilt-card__badge--amber">Flagship Class</span>
+            <h3 class="tilt-card__title">Volvo / Premium Coaches</h3>
+            <p>Whisper-quiet Volvo B11R and Scania multi-axle coaches with electronic stability control, onboard Wi-Fi, and lounge boarding.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. HOW IT WORKS (Stepped Timeline Process - Non-Card Layout) -->
+    <section class="section section--alt" id="how-it-works" aria-labelledby="how-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__eyebrow">5-Step Journey Flow</span>
+          <h2 class="section__title" id="how-heading">How It Works</h2>
+          <p class="section__subtitle">From route discovery to boarding pass verification, your entire booking takes less than two minutes.</p>
+        </div>
+
+        <ol class="timeline-steps">
+          <li class="timeline-step reveal">
+            <span class="timeline-step__num">01</span>
+            <h3>Step 1: Search Your Route</h3>
+            <p>Select your origin city, destination, travel date, and passenger count.</p>
+          </li>
+          <li class="timeline-step reveal">
+            <span class="timeline-step__num">02</span>
+            <h3>Step 2: Choose Your Bus</h3>
+            <p>Filter coaches by departure timing, AC/Sleeper class, rating, and fare.</p>
+          </li>
+          <li class="timeline-step reveal">
+            <span class="timeline-step__num">03</span>
+            <h3>Step 3: Select Your Seats</h3>
+            <p>Pick your exact lower/upper berth or window seat on the live deck map.</p>
+          </li>
+          <li class="timeline-step reveal">
+            <span class="timeline-step__num">04</span>
+            <h3>Step 4: Make Secure Payment</h3>
+            <p>Apply a promo code and complete checkout via UPI, Card, or Net Banking.</p>
+          </li>
+          <li class="timeline-step reveal">
+            <span class="timeline-step__num">05</span>
+            <h3>Step 5: Receive Your E-Ticket</h3>
+            <p>Download your QR-verified PDF ticket and track live bus boarding updates.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 11. CUSTOMER REVIEWS & TESTIMONIALS -->
+    <section class="section" id="customer-reviews" aria-labelledby="reviews-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__eyebrow">Verified Passenger Voices</span>
+          <h2 class="section__title" id="reviews-heading">Customer Reviews &amp; Testimonials</h2>
+          <p class="section__subtitle">Read genuine feedback from thousands of intercity travelers who book with RouteGo every week.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="tilt-card reveal">
+            <img src="assets/images/people/person-rev-arjun.jpg" alt="Portrait of traveler Arjun Subramanian" loading="lazy" width="76" height="76" style="width:76px;height:76px;border-radius:50%;object-fit:cover;border:2px solid var(--amber);margin-block-end:var(--space-2);">
+            <div style="color:var(--amber);margin-block-end:0.5rem;" aria-label="5 out of 5 stars">★★★★★ (5.0)</div>
+            <h3 class="tilt-card__title">Arjun Subramanian</h3>
+            <span class="tilt-card__badge">Chennai → Bangalore • Volvo Sleeper</span>
+            <p>"Selecting my exact lower-deck single berth on RouteGo was effortless. The KPN Volvo departed Koyambedu right on the dot and the linens were spotless."</p>
+          </article>
+
+          <article class="tilt-card reveal">
+            <img src="assets/images/people/person-rev-priya.jpg" alt="Portrait of traveler Priya Nair" loading="lazy" width="76" height="76" style="width:76px;height:76px;border-radius:50%;object-fit:cover;border:2px solid var(--teal);margin-block-end:var(--space-2);">
+            <div style="color:var(--amber);margin-block-end:0.5rem;" aria-label="5 out of 5 stars">★★★★★ (5.0)</div>
+            <h3 class="tilt-card__title">Priya Nair</h3>
+            <span class="tilt-card__badge">Bangalore → Kochi • Scania Multi-Axle</span>
+            <p>"As a solo female traveler, the live GPS tracking and verified boarding lounge gave me complete peace of mind. Plus, FIRST25 saved me ₹345!"</p>
+          </article>
+
+          <article class="tilt-card reveal">
+            <img src="assets/images/people/person-rev-karthik.jpg" alt="Portrait of traveler Karthik Reddy" loading="lazy" width="76" height="76" style="width:76px;height:76px;border-radius:50%;object-fit:cover;border:2px solid var(--amber);margin-block-end:var(--space-2);">
+            <div style="color:var(--amber);margin-block-end:0.5rem;" aria-label="5 out of 5 stars">★★★★★ (4.9)</div>
+            <h3 class="tilt-card__title">Karthik Reddy</h3>
+            <span class="tilt-card__badge">Bangalore → Hyderabad • Orange Starliner</span>
+            <p>"When my meeting shifted, I cancelled my ticket from the RouteGo Dashboard in two clicks and tracked my refund in real time. Best customer support in the industry."</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. TRAVEL INSPIRATION / POPULAR DESTINATIONS -->
+    <section class="section section--alt" id="popular-destinations" aria-labelledby="destinations-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__eyebrow">Highway Horizons</span>
+          <h2 class="section__title" id="destinations-heading">Travel Inspiration / Popular Destinations</h2>
+          <p class="section__subtitle">Wake up in a vibrant new city. Explore our most loved overnight and daytime coach destinations.</p>
+        </div>
+
+        <div class="grid-4">
+          <article class="tilt-card reveal">
+            <div class="tilt-card__media">
+              <picture>
+                <source srcset="assets/images/destinations/dest-h1-chennai-400w.webp 400w, assets/images/destinations/dest-h1-chennai.webp 800w" sizes="320px" type="image/webp">
+                <img src="assets/images/destinations/dest-h1-chennai.jpg" alt="Chennai coastal twilight skyline and Marina highway" loading="lazy" width="800" height="540">
+              </picture>
+            </div>
+            <h3 class="tilt-card__title">Chennai</h3>
+            <p>Gateway to South India with breezy coastal boulevards, heritage temples, and thriving cultural hubs.</p>
+            <div class="tilt-card__actions">
+              <a href="pages/routes-fares.html" class="btn btn--outline btn--sm" data-route-from="Bangalore" data-route-to="Chennai">Explore Routes</a>
+            </div>
+          </article>
+
+          <article class="tilt-card reveal">
+            <div class="tilt-card__media">
+              <picture>
+                <source srcset="assets/images/destinations/dest-h1-bangalore-400w.webp 400w, assets/images/destinations/dest-h1-bangalore.webp 800w" sizes="320px" type="image/webp">
+                <img src="assets/images/destinations/dest-h1-bangalore.jpg" alt="Bangalore lush garden avenues and modern tech skyline" loading="lazy" width="800" height="540">
+              </picture>
+            </div>
+            <h3 class="tilt-card__title">Bangalore</h3>
+            <p>India's Garden City and innovation capital known for pleasant weather, craft cafes, and botanical parks.</p>
+            <div class="tilt-card__actions">
+              <a href="pages/routes-fares.html" class="btn btn--outline btn--sm" data-route-from="Chennai" data-route-to="Bangalore">Explore Routes</a>
+            </div>
+          </article>
+
+          <article class="tilt-card reveal">
+            <div class="tilt-card__media">
+              <picture>
+                <source srcset="assets/images/destinations/dest-h1-hyderabad-400w.webp 400w, assets/images/destinations/dest-h1-hyderabad.webp 800w" sizes="320px" type="image/webp">
+                <img src="assets/images/destinations/dest-h1-hyderabad.jpg" alt="Hyderabad illuminated cable bridge and night skyline" loading="lazy" width="800" height="540">
+              </picture>
+            </div>
+            <h3 class="tilt-card__title">Hyderabad</h3>
+            <p>Where royal Nizam heritage meets gleaming HITEC corridors, iconic forts, and legendary culinary trails.</p>
+            <div class="tilt-card__actions">
+              <a href="pages/routes-fares.html" class="btn btn--outline btn--sm" data-route-from="Bangalore" data-route-to="Hyderabad">Explore Routes</a>
+            </div>
+          </article>
+
+          <article class="tilt-card reveal">
+            <div class="tilt-card__media">
+              <picture>
+                <source srcset="assets/images/destinations/dest-h1-kochi-400w.webp 400w, assets/images/destinations/dest-h1-kochi.webp 800w" sizes="320px" type="image/webp">
+                <img src="assets/images/destinations/dest-h1-kochi.jpg" alt="Kochi emerald backwaters and coastal highway bridge at sunset" loading="lazy" width="800" height="540">
+              </picture>
+            </div>
+            <h3 class="tilt-card__title">Kochi</h3>
+            <p>Queen of the Arabian Sea offering serene backwaters, Fort Kochi art cafés, and scenic coastal sunsets.</p>
+            <div class="tilt-card__actions">
+              <a href="pages/routes-fares.html" class="btn btn--outline btn--sm" data-route-from="Bangalore" data-route-to="Kochi">Explore Routes</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. NEWSLETTER SUBSCRIPTION -->
+    <section class="section" id="newsletter" aria-labelledby="newsletter-heading">
+      <div class="container">
+        <div class="search-panel reveal" style="max-width:860px;margin-inline:auto;text-align:center;">
+          <span class="section__eyebrow">VIP Fare Alerts</span>
+          <h2 id="newsletter-heading" style="margin-block-end:var(--space-1);">Get Exclusive Travel Deals in Your Inbox.</h2>
+          <p style="margin-block-end:var(--space-3);">Subscribe to receive early-bird festival bus coupons, special offers, and real-time highway route updates. Zero spam, unsubscribe anytime.</p>
+          <!-- TODO: Replace action attribute with Mailchimp / ConvertKit endpoint URL -->
+          <form class="js-validated-form" data-success-message="Welcome aboard! Exclusive RouteGo travel deals are headed to your inbox." style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;max-width:600px;margin-inline:auto;" novalidate>
+            <div class="form-group" style="flex:1 1 280px;">
+              <label for="newsletterEmail" class="sr-only">Email Address</label>
+              <input type="email" id="newsletterEmail" name="email" class="form-control" placeholder="Enter your email address (e.g. traveler@domain.com)" required>
+              <span class="form-error">Please enter a valid email address.</span>
+            </div>
+            <button type="submit" class="btn btn--primary">
+              <span data-icon="mail"></span>
+              <span>Subscribe</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14. FINAL BOOKING CTA -->
+    <section class="section section--alt" id="final-cta" aria-labelledby="final-cta-heading" style="text-align:center;">
+      <div class="container reveal">
+        <span class="section__eyebrow">Depart Tonight, Arrive Refreshed</span>
+        <h2 id="final-cta-heading" class="section__title">Ready for Your Next Adventure?</h2>
+        <p class="section__subtitle" style="max-width:640px;margin-inline:auto;margin-block-end:var(--space-4);">
+          Compare live seat availability across 500+ luxury sleeper and seater coaches and lock in your guaranteed berth today.
+        </p>
+        <a href="#hero-search" class="btn btn--primary btn--lg">
+          <span data-icon="search"></span>
+          <span>Search Buses</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- 15. FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <a href="index.html" class="navbar__brand" style="margin-block-end:var(--space-2);">
+            <span class="navbar__brand-icon" data-icon="bus"></span>
+            <span>Route<span>Go</span></span>
+          </a>
+          <p style="font-size:0.9rem;margin-block-end:var(--space-2);">
+            RouteGo is South &amp; Central India's modern intercity bus ticket booking agency. We connect travelers with verified luxury sleeper and seater coaches, transparent pricing, and instant e-tickets.
+          </p>
+          <p style="font-size:0.85rem;color:var(--amber);" class="mono">24/7 Helpline: +91 44 4800 9900 • care@routego.in</p>
+          <div class="social-links" style="margin-block-start:var(--space-3);" aria-label="Social media links">
+            <a href="https://facebook.com" class="social-link social-link--facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Follow us on Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://instagram.com" class="social-link social-link--instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Follow us on Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://wa.me/914448009900" class="social-link social-link--whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="Chat on WhatsApp">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+            <a href="https://x.com" class="social-link social-link--x" target="_blank" rel="noopener noreferrer" aria-label="X (formerly Twitter)" title="Follow us on X">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="site-footer__title">Quick Links</h3>
+          <ul class="site-footer__links">
+            <li><a href="index.html">Home 1 (Main Landing)</a></li>
+            <li><a href="pages/home-2.html">Home 2 (Travel Discovery)</a></li>
+            <li><a href="pages/routes-fares.html">Routes &amp; Fares</a></li>
+            <li><a href="pages/offers.html">Special Offers &amp; Deals</a></li>
+            <li><a href="pages/about.html">About RouteGo</a></li>
+            <li><a href="pages/dashboard.html">Traveler Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="site-footer__title">Popular Routes</h3>
+          <ul class="site-footer__links">
+            <li><a href="pages/search-results.html" data-route-from="Chennai" data-route-to="Bangalore">Chennai to Bangalore Bus</a></li>
+            <li><a href="pages/search-results.html" data-route-from="Bangalore" data-route-to="Hyderabad">Bangalore to Hyderabad Bus</a></li>
+            <li><a href="pages/search-results.html" data-route-from="Chennai" data-route-to="Coimbatore">Chennai to Coimbatore Bus</a></li>
+            <li><a href="pages/search-results.html" data-route-from="Hyderabad" data-route-to="Vijayawada">Hyderabad to Vijayawada Bus</a></li>
+            <li><a href="pages/search-results.html" data-route-from="Madurai" data-route-to="Chennai">Madurai to Chennai Bus</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="site-footer__title">Bus Services</h3>
+          <ul class="site-footer__links">
+            <li><a href="pages/routes-fares.html">Volvo B11R Multi-Axle Sleeper</a></li>
+            <li><a href="pages/routes-fares.html">Scania Luxury Night Coaches</a></li>
+            <li><a href="pages/routes-fares.html">AC Sleeper (2+1 Berths)</a></li>
+            <li><a href="pages/routes-fares.html">Executive AC Recliner Seater</a></li>
+            <li><a href="pages/routes-fares.html">Non-AC Air-Suspension Coaches</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="site-footer__title">Customer Support &amp; Policies</h3>
+          <ul class="site-footer__links">
+            <li><a href="pages/help-support.html">Help &amp; Support Center</a></li>
+            <li><a href="pages/faq.html">Frequently Asked Questions</a></li>
+            <li><a href="pages/contact.html">Contact Information</a></li>
+            <li><a href="pages/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="pages/terms-conditions.html">Terms &amp; Conditions</a></li>
+            <li><a href="pages/cancellation-policy.html">Cancellation &amp; Refund Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p>&copy; 2026 RouteGo Bus Ticket Booking Agency Pvt. Ltd. All Rights Reserved.</p>
+        <div class="site-footer__legal-links">
+          <a href="pages/privacy-policy.html">Privacy Policy</a>
+          <a href="pages/terms-conditions.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top (Back to Top) Button -->
+  <button type="button" class="scroll-top-btn js-scroll-top" aria-label="Scroll to top of page" title="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 19V5"/>
+      <path d="m5 12 7-7 7 7"/>
+    </svg>
+  </button>
+
+  <script src="assets/js/plugins/data.js"></script>
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>
+

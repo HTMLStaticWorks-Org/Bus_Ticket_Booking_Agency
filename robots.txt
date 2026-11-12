@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /pages/dashboard.html
+
+Sitemap: https://routego.example.com/sitemap.xml
+

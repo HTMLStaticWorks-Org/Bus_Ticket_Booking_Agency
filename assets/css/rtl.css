@@ -1,0 +1,46 @@
+/* ==========================================================================
+   ROUTEGO - RIGHT-TO-LEFT (RTL) STYLESHEET (rtl.css)
+   Full RTL Support via [dir="rtl"] & Logical CSS Properties
+   ========================================================================== */
+
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Preserve strict center alignment inside all 3D Tilt Cards even in RTL (0.2 Rule) */
+[dir="rtl"] .tilt-card,
+[dir="rtl"] .tilt-card * {
+  text-align: center !important;
+}
+
+[dir="rtl"] .section__header,
+[dir="rtl"] .hero-home1__text,
+[dir="rtl"] .page-hero__content {
+  text-align: center;
+}
+
+[dir="rtl"] .mobile-drawer {
+  transform: translateX(-100%);
+}
+
+[dir="rtl"] .mobile-drawer.is-open {
+  transform: translateX(0);
+}
+
+[dir="rtl"] .bus-progress-bar__icon {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .btn svg.icon-directional {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .marquee-strip__track {
+  animation-direction: reverse;
+}
+
+[dir="rtl"] .road-divider__stripes {
+  animation-direction: reverse;
+}
+

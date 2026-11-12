@@ -1,0 +1,803 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Routes &amp; Fares | Compare Bus Operators &amp; Prices | RouteGo</title>
+  <meta name="description"
+    content="Explore intercity bus routes and compare fares across Volvo, Scania, and AC Sleeper operators on RouteGo. View live schedules, boarding points, and book seats.">
+  <meta property="og:title" content="Routes & Fares | Compare Bus Operators & Prices | RouteGo">
+  <meta property="og:description"
+    content="Compare intercity bus operators on fare, duration, amenities, and departure schedules.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://routego.example.com/pages/routes-fares.html">
+  <meta property="og:image" content="../assets/images/hero/hero-routes-highway.jpg">
+  <link rel="canonical" href="https://routego.example.com/pages/routes-fares.html">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="alternate icon" type="image/png" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../favicon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BusTrip",
+    "name": "Chennai to Bangalore Express Sleeper",
+    "provider": {
+      "@type": "Organization",
+      "name": "RouteGo"
+    },
+    "departureBusStop": {
+      "@type": "BusStop",
+      "name": "Koyambedu Omni Bus Terminus (CMBT), Chennai"
+    },
+    "arrivalBusStop": {
+      "@type": "BusStop",
+      "name": "Majestic Kempegowda Bus Station, Bangalore"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Main Navigation Bar (0.5) -->
+  <header class="site-header">
+    <div class="container navbar">
+      <!-- TODO: Change brand name or CTA label ("Book Tickets" / "Shop Collection") here -->
+      <a href="../index.html" class="navbar__brand" aria-label="RouteGo Home">
+        <span class="navbar__brand-icon" data-icon="bus"></span>
+        <span>Route<span>Go</span></span>
+      </a>
+
+      <nav class="navbar__menu" aria-label="Primary Navigation">
+        <a href="../index.html" class="navbar__link">Home</a>
+        <a href="home-2.html" class="navbar__link">Home 2</a>
+        <a href="about.html" class="navbar__link">About</a>
+        <a href="routes-fares.html" class="navbar__link is-active">Routes</a>
+        <a href="offers.html" class="navbar__link">Offers</a>
+        <a href="contact.html" class="navbar__link">Contact</a>
+        <a href="dashboard.html" class="navbar__link">Dashboard</a>
+      </nav>
+
+      <div class="navbar__actions">
+        <button type="button" class="icon-btn js-theme-toggle" aria-label="Switch to Light Mode"
+          title="Switch to Light Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2" />
+            <path d="M12 20v2" />
+            <path d="m4.93 4.93 1.41 1.41" />
+            <path d="m17.66 17.66 1.41 1.41" />
+            <path d="M2 12h2" />
+            <path d="M20 12h2" />
+            <path d="m6.34 17.66-1.41 1.41" />
+            <path d="m19.07 4.93-1.41 1.41" />
+          </svg>
+        </button>
+        <button type="button" class="icon-btn js-rtl-toggle" aria-label="Toggle RTL Direction"
+          title="Toggle RTL Direction">RTL</button>
+        <a href="login.html" class="btn btn--primary btn--sm">Login</a>
+        <button type="button" class="icon-btn navbar__hamburger js-menu-open" aria-label="Open Navigation Menu"
+          aria-expanded="false">
+          <span data-icon="menu"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <aside class="mobile-drawer" aria-hidden="true" aria-label="Mobile Navigation">
+    <div class="mobile-drawer__header">
+      <a href="../index.html" class="navbar__brand">
+        <span class="navbar__brand-icon" data-icon="bus"></span>
+        <span>Route<span>Go</span></span>
+      </a>
+      <button type="button" class="icon-btn js-menu-close" aria-label="Close Navigation Menu">
+        <span data-icon="x"></span>
+      </button>
+    </div>
+    <nav class="mobile-drawer__list" aria-label="Mobile Links">
+      <a href="../index.html" class="mobile-drawer__link">Home</a>
+      <a href="home-2.html" class="mobile-drawer__link">Home 2</a>
+      <a href="about.html" class="mobile-drawer__link">About</a>
+      <a href="routes-fares.html" class="mobile-drawer__link is-active">Routes</a>
+      <a href="offers.html" class="mobile-drawer__link">Offers</a>
+      <a href="contact.html" class="mobile-drawer__link">Contact</a>
+      <a href="login.html" class="mobile-drawer__link">Login</a>
+      <a href="dashboard.html" class="mobile-drawer__link">Traveler Dashboard</a>
+    </nav>
+    <a href="routes-fares.html" class="btn btn--primary btn--full">Book Tickets</a>
+  </aside>
+
+  <main id="main-content">
+    <!-- 1. PAGE HERO BANNER -->
+    <section class="page-hero">
+      <div class="page-hero__bg">
+        <picture>
+          <source
+            srcset="../assets/images/hero/hero-routes-highway-400w.webp 400w, ../assets/images/hero/hero-routes-highway.webp 1200w"
+            sizes="100vw" type="image/webp">
+          <img src="../assets/images/hero/hero-routes-highway.jpg"
+            alt="Luxury coach cruising on an elevated highway surrounded by green hills at golden hour" width="1400"
+            height="700">
+        </picture>
+      </div>
+      <div class="page-hero__overlay"></div>
+      <div class="container page-hero__content reveal">
+        <span class="section__eyebrow">Intercity Corridors &amp; Live Schedules</span>
+        <h1>Explore Routes &amp; Find Your Best Fare.</h1>
+        <p style="font-size:1.12rem;margin-block-start:var(--space-2);">
+          Discover 100+ verified city-to-city bus corridors, compare transparent ticket fares across luxury sleeper and
+          seater operators, and book your guaranteed seat in seconds.
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. ROUTE SEARCH SECTION -->
+    <section class="section" id="route-search" aria-labelledby="route-search-heading"
+      style="padding-block-start:var(--space-5);">
+      <div class="container">
+        <h2 id="route-search-heading" class="sr-only">Route Search Section</h2>
+        <form class="search-panel js-bus-search-form reveal" novalidate>
+          <div class="search-panel__grid">
+            <div class="form-group">
+              <label class="form-label" for="rfFromCity">From City</label>
+              <select id="rfFromCity" name="fromCity" class="form-control" required>
+                <option value="Chennai" selected>Chennai</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Coimbatore">Coimbatore</option>
+                <option value="Madurai">Madurai</option>
+                <option value="Vijayawada">Vijayawada</option>
+                <option value="Kochi">Kochi</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="align-items:center;">
+              <button type="button" class="swap-btn js-swap-cities" aria-label="Swap Cities" title="Swap Cities">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m16 3 4 4-4 4" />
+                  <path d="M20 7H4" />
+                  <path d="m8 21-4-4 4-4" />
+                  <path d="M4 17h16" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="rfToCity">To City</label>
+              <select id="rfToCity" name="toCity" class="form-control" required>
+                <option value="Bangalore" selected>Bangalore</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Coimbatore">Coimbatore</option>
+                <option value="Vijayawada">Vijayawada</option>
+                <option value="Madurai">Madurai</option>
+                <option value="Kochi">Kochi</option>
+              </select>
+              <span class="form-error">Origin and destination cannot match.</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="rfDate">Departure Date</label>
+              <input type="date" id="rfDate" name="journeyDate" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="rfReturn">Return Date (Optional)</label>
+              <input type="date" id="rfReturn" name="returnDate" class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="rfPax">Passenger Count</label>
+              <select id="rfPax" name="passengers" class="form-control">
+                <option value="1" selected>1 Passenger</option>
+                <option value="2">2 Passengers</option>
+                <option value="3">3 Passengers</option>
+                <option value="4">4 Passengers</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <button type="submit" class="btn btn--primary btn--full" style="min-height:48px;">Search Buses</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- 3. POPULAR TRAVEL ROUTES -->
+    <section class="section section--alt" id="popular-travel-routes" aria-labelledby="ptr-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__eyebrow">City-to-City Directory</span>
+          <h2 class="section__title" id="ptr-heading">Popular Travel Routes</h2>
+          <p class="section__subtitle">Explore our busiest daily express corridors with guaranteed schedules and
+            verified operators.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="tilt-card reveal">
+            <span class="tilt-card__badge">350 km • NH-48</span>
+            <h3 class="tilt-card__title">Chennai to Bangalore</h3>
+            <p><strong>Available Operators:</strong> KPN Royal, Parveen Mercedes, SRS Prime</p>
+            <div class="tilt-card__meta">
+              <span><strong>Duration:</strong> 5h 45m – 6h 30m</span>
+              <span>•</span>
+              <span>42 Daily Buses</span>
+            </div>
+            <div class="tilt-card__price">Starting ₹520</div>
+            <div class="tilt-card__actions">
+              <a href="search-results.html" class="btn btn--primary btn--sm" data-route-from="Chennai"
+                data-route-to="Bangalore">View Details</a>
+            </div>
+          </article>
+
+          <article class="tilt-card reveal">
+            <span class="tilt-card__badge">570 km • NH-44</span>
+            <h3 class="tilt-card__title">Bangalore to Hyderabad</h3>
+            <p><strong>Available Operators:</strong> Orange Starliner, VRL Night Cruiser</p>
+            <div class="tilt-card__meta">
+              <span><strong>Duration:</strong> 8h 45m – 9h 15m</span>
+              <span>•</span>
+              <span>38 Daily Buses</span>
+            </div>
+            <div class="tilt-card__price">Starting ₹1,080</div>
+            <div class="tilt-card__actions">
+              <a href="search-results.html" class="btn btn--primary btn--sm" data-route-from="Bangalore"
+                data-route-to="Hyderabad">View Details</a>
+            </div>
+          </article>
+
+          <article class="tilt-card reveal">
+            <span class="tilt-card__badge">505 km • NH-544</span>
+            <h3 class="tilt-card__title">Chennai to Coimbatore</h3>
+            <p><strong>Available Operators:</strong> KPN Royal, Kallada G4, Parveen</p>
+            <div class="tilt-card__meta">
+              <span><strong>Duration:</strong> 7h 45m – 8h 15m</span>
+              <span>•</span>
+              <span>34 Daily Buses</span>
+            </div>
+            <div class="tilt-card__price">Starting ₹790</div>
+            <div class="tilt-card__actions">
+              <a href="search-results.html" class="btn btn--primary btn--sm" data-route-from="Chennai"
+                data-route-to="Coimbatore">View Details</a>
+            </div>
+          </article>
+
+          <article class="tilt-card reveal">
+            <span class="tilt-card__badge">275 km • NH-65</span>
+            <h3 class="tilt-card__title">Hyderabad to Vijayawada</h3>
+            <p><strong>Available Operators:</strong> Orange Starliner, SRS Prime</p>
+            <div class="tilt-card__meta">
+              <span><strong>Duration:</strong> 4h 45m – 5h 15m</span>
+              <span>•</span>
+              <span>45 Daily Buses</span>
+            </div>
+            <div class="tilt-card__price">Starting ₹580</div>
+            <div class="tilt-card__actions">
+              <a href="search-results.html" class="btn btn--primary btn--sm" data-route-from="Hyderabad"
+                data-route-to="Vijayawada">View Details</a>
+            </div>
+          </article>
+
+          <article class="tilt-card reveal">
+            <span class="tilt-card__badge">462 km • NH-38</span>
+            <h3 class="tilt-card__title">Madurai to Chennai</h3>
+            <p><strong>Available Operators:</strong> Parveen Mercedes-Benz, KPN Royal</p>
+            <div class="tilt-card__meta">
+              <span><strong>Duration:</strong> 7h 30m – 7h 50m</span>
+              <span>•</span>
+              <span>36 Daily Buses</span>
+            </div>
+            <div class="tilt-card__price">Starting ₹680</div>
+            <div class="tilt-card__actions">
+              <a href="search-results.html" class="btn btn--primary btn--sm" data-route-from="Madurai"
+                data-route-to="Chennai">View Details</a>
+            </div>
+          </article>
+
+          <article class="tilt-card reveal">
+            <span class="tilt-card__badge">548 km • NH-544</span>
+            <h3 class="tilt-card__title">Bangalore to Kochi</h3>
+            <p><strong>Available Operators:</strong> Kallada G4 Scania, Orange Starliner</p>
+            <div class="tilt-card__meta">
+              <span><strong>Duration:</strong> 9h 45m – 10h 15m</span>
+              <span>•</span>
+              <span>28 Daily Buses</span>
+            </div>
+            <div class="tilt-card__price">Starting ₹1,150</div>
+            <div class="tilt-card__actions">
+              <a href="search-results.html" class="btn btn--primary btn--sm" data-route-from="Bangalore"
+                data-route-to="Kochi">View Details</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="road-divider" aria-hidden="true">
+      <div class="road-divider__stripes"></div>
+    </div>
+
+    <!-- 4. AVAILABLE BUS SEARCH RESULTS & 5. SEARCH FILTERS & SORTING -->
+    <section class="section" id="available-buses" aria-labelledby="available-buses-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__eyebrow">Live Seat Inventory</span>
+          <h2 class="section__title" id="available-buses-heading">Available Bus Search Results &amp; Filters</h2>
+          <p class="section__subtitle">Filter coaches by bus type, AC/Non-AC, Sleeper/Seater, departure window,
+            operator, and maximum price.</p>
+        </div>
+
+        <div class="coach-deck-wrapper" style="grid-template-columns: 1fr;">
+          <!-- 5. SEARCH FILTERS & SORTING PANEL -->
+          <div class="search-panel reveal" style="margin-block-end:var(--space-4);">
+            <div
+              style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;margin-block-end:var(--space-2);">
+              <h3 style="font-size:1.1rem;">Search Filters &amp; Sorting</h3>
+              <div style="display:flex;align-items:center;gap:1rem;">
+                <label style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.86rem;cursor:pointer;">
+                  <input type="checkbox" id="showAllRoutesToggle" checked>
+                  <span>Show Coaches Across All Corridors</span>
+                </label>
+                <button type="button" class="btn btn--outline btn--sm" id="resetBusFilters">Reset Filters</button>
+              </div>
+            </div>
+
+            <div class="grid-4" style="align-items:end;">
+              <div class="form-group">
+                <label class="form-label" for="filterBusType">Bus Category</label>
+                <select id="filterBusType" class="form-control">
+                  <option value="all">All Categories</option>
+                  <option value="Volvo / Premium">Volvo / Premium Coaches</option>
+                  <option value="AC Sleeper">AC Sleeper</option>
+                  <option value="Non-AC Sleeper">Non-AC Sleeper</option>
+                  <option value="AC Seater">AC Seater</option>
+                  <option value="Non-AC Seater">Non-AC Seater</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="filterAcType">AC / Non-AC</label>
+                <select id="filterAcType" class="form-control">
+                  <option value="all">Both AC &amp; Non-AC</option>
+                  <option value="ac">AC Only</option>
+                  <option value="non-ac">Non-AC Only</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="filterLayout">Sleeper / Seater</label>
+                <select id="filterLayout" class="form-control">
+                  <option value="all">Sleeper &amp; Seater</option>
+                  <option value="sleeper">Sleeper Berths (2+1)</option>
+                  <option value="seater">Recliner Seater (2+2)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="filterSlot">Departure Time</label>
+                <select id="filterSlot" class="form-control">
+                  <option value="all">Any Time</option>
+                  <option value="morning">Morning (05:00 – 11:59)</option>
+                  <option value="afternoon">Afternoon (12:00 – 17:59)</option>
+                  <option value="night">Night (18:00 – 23:59)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="filterOperator">Operator</label>
+                <select id="filterOperator" class="form-control">
+                  <option value="all">All Trusted Operators</option>
+                  <option value="KPN Royal Travels">KPN Royal Travels</option>
+                  <option value="Orange Starliner Tours">Orange Starliner Tours</option>
+                  <option value="Parveen Mercedes-Benz Coach">Parveen Mercedes-Benz Coach</option>
+                  <option value="SRS Prime Express">SRS Prime Express</option>
+                  <option value="VRL Night Cruiser">VRL Night Cruiser</option>
+                  <option value="Kallada G4 Scania Express">Kallada G4 Scania Express</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="filterMaxPrice">Max Price: <span id="filterPriceLabel" class="mono">Up to
+                    ₹2000</span></label>
+                <input type="range" id="filterMaxPrice" min="500" max="2000" step="50" value="2000" class="form-control"
+                  style="padding:0.3rem;">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="sortBuses">Sort By</label>
+                <select id="sortBuses" class="form-control">
+                  <option value="price-asc">Lowest Price First</option>
+                  <option value="departure-asc">Earliest Departure</option>
+                  <option value="rating-desc">Highest Customer Rating</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <div class="mono" id="busResultsCount" style="color:var(--teal);font-weight:700;padding-block:0.8rem;">
+                  Loading Coaches...</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. AVAILABLE BUS SEARCH RESULTS CONTAINER -->
+          <div id="busResultsContainer" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. FARE COMPARISON SECTION -->
+    <section class="section section--alt" id="fare-comparison" aria-labelledby="fare-comp-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__eyebrow">Side-by-Side Benchmark</span>
+          <h2 class="section__title" id="fare-comp-heading">Fare Comparison Section</h2>
+          <p class="section__subtitle">Compare leading operators on price, transit duration, onboard facilities, and
+            departure timings. Best-value choice highlighted.</p>
+        </div>
+
+        <div class="table-wrap reveal">
+          <table class="data-table" aria-label="Operator Fare Comparison Table">
+            <thead>
+              <tr>
+                <th>Operator Name</th>
+                <th>Coach Class</th>
+                <th>Timings &amp; Duration</th>
+                <th>Onboard Facilities</th>
+                <th>Ticket Fare</th>
+                <th>Rating &amp; Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="is-best-value">
+                <td>
+                  <strong>KPN Royal Travels</strong><br>
+                  <span class="status-badge status-badge--confirmed">★ Best Value Choice</span>
+                </td>
+                <td>Volvo Multi-Axle AC Sleeper (2+1)</td>
+                <td class="mono">22:15 → 04:30 (6h 15m)</td>
+                <td>Wi-Fi, USB-C, Fresh Blanket, AC Lounge, GPS</td>
+                <td class="mono" style="color:var(--amber);font-weight:700;font-size:1.1rem;">₹980</td>
+                <td>★ 4.8 / 5.0</td>
+              </tr>
+              <tr>
+                <td><strong>Parveen Mercedes-Benz Coach</strong></td>
+                <td>AC Luxury Seater / Semi-Sleeper (2+2)</td>
+                <td class="mono">06:30 → 12:15 (5h 45m)</td>
+                <td>Charging Port, Reading Light, Water Bottle, GPS</td>
+                <td class="mono" style="color:var(--amber);font-weight:700;font-size:1.1rem;">₹690</td>
+                <td>★ 4.7 / 5.0</td>
+              </tr>
+              <tr>
+                <td><strong>Orange Starliner Tours</strong></td>
+                <td>Scania Multi-Axle AC Sleeper (2+1)</td>
+                <td class="mono">21:30 → 06:15 (8h 45m)</td>
+                <td>Wi-Fi, Blanket, Pillow, Snack Kit, Live GPS</td>
+                <td class="mono" style="color:var(--amber);font-weight:700;font-size:1.1rem;">₹1,290</td>
+                <td>★ 4.9 / 5.0</td>
+              </tr>
+              <tr>
+                <td><strong>VRL Night Cruiser</strong></td>
+                <td>AC Sleeper Executive (2+1)</td>
+                <td class="mono">22:45 → 07:45 (9h 00m)</td>
+                <td>Charging Port, Fresh Blanket, Live GPS</td>
+                <td class="mono" style="color:var(--amber);font-weight:700;font-size:1.1rem;">₹1,080</td>
+                <td>★ 4.6 / 5.0</td>
+              </tr>
+              <tr>
+                <td><strong>SRS Prime Express</strong></td>
+                <td>Non-AC Sleeper Air-Suspension (2+1)</td>
+                <td class="mono">21:00 → 03:30 (6h 30m)</td>
+                <td>Charging Port, Reading Lamp, Live GPS</td>
+                <td class="mono" style="color:var(--amber);font-weight:700;font-size:1.1rem;">₹620</td>
+                <td>★ 4.4 / 5.0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. ROUTE INFORMATION & TRAVEL GUIDE (Split Editorial Row) -->
+    <section class="section" id="route-guide" aria-labelledby="route-guide-heading">
+      <div class="container">
+        <div class="split-row reveal">
+          <div>
+            <span class="section__eyebrow">Corridor Briefing</span>
+            <h2 id="route-guide-heading" class="section__title">Route Information &amp; Travel Guide</h2>
+            <p style="margin-block-end:var(--space-2);">
+              Our flagship <strong>Chennai ⇄ Bangalore (NH-48)</strong> and <strong>Bangalore ⇄ Hyderabad
+                (NH-44)</strong> expressways feature six-lane access-controlled carriageways, hygienic midnight food
+              plaza halts, and dedicated city boarding terminals.
+            </p>
+            <div class="grid-2" style="margin-block:var(--space-3);">
+              <div
+                style="background:var(--bg-surface);padding:var(--space-2);border-radius:var(--radius-sm);border:1px solid var(--border-subtle);">
+                <h3 style="font-size:1rem;color:var(--amber);margin-block-end:0.35rem;">Key Boarding Locations</h3>
+                <p style="font-size:0.88rem;">Koyambedu CMBT, Kilambakkam KCBT, Guindy Kathipara, Sriperumbudur,
+                  Madiwala Lounge, Majestic, Hebbal, Miyapur.</p>
+              </div>
+              <div
+                style="background:var(--bg-surface);padding:var(--space-2);border-radius:var(--radius-sm);border:1px solid var(--border-subtle);">
+                <h3 style="font-size:1rem;color:var(--teal);margin-block-end:0.35rem;">Major Dropping Points &amp; Stops
+                </h3>
+                <p style="font-size:0.88rem;">Electronic City Toll, Silk Board Junction, Vellore Bypass, Krishnagiri
+                  Plaza, Shamshabad Airport Road, Lakdikapul.</p>
+              </div>
+            </div>
+            <p class="mono" style="font-size:0.85rem;color:var(--text-secondary);">
+              Highway Distance: 348 km (NH-48) / 569 km (NH-44) • Average Speed: 65–75 km/h • Rest Stop: 20-min verified
+              hygiene plaza
+            </p>
+          </div>
+
+          <div class="split-row__media">
+            <picture>
+              <source
+                srcset="../assets/images/routes/route-rf-guide-expressway-400w.webp 400w, ../assets/images/routes/route-rf-guide-expressway.webp 800w"
+                sizes="540px" type="image/webp">
+              <img src="../assets/images/routes/route-rf-guide-expressway.jpg"
+                alt="Touring coach on an elevated expressway corridor at sunset" loading="lazy" width="960"
+                height="600">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. FARE & BOOKING INFORMATION -->
+    <section class="section section--alt" id="fare-booking-info" aria-labelledby="fbi-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__eyebrow">Policy &amp; Fee Transparency</span>
+          <h2 class="section__title" id="fbi-heading">Fare &amp; Booking Information</h2>
+          <p class="section__subtitle">Clear, upfront guidelines on ticket pricing, taxes, payment options, cancellation
+            slabs, and refund processing.</p>
+        </div>
+
+        <div class="grid-4">
+          <article class="tilt-card reveal">
+            <div class="tilt-card__icon" data-icon="tag"></div>
+            <h3 class="tilt-card__title">Pricing &amp; Convenience Fees</h3>
+            <p>Displayed base fares include highway toll charges. A nominal 5% GST and ₹35 platform service fee apply at
+              checkout.</p>
+          </article>
+
+          <article class="tilt-card reveal">
+            <div class="tilt-card__icon" data-icon="creditCard"></div>
+            <h3 class="tilt-card__title">Payment Information</h3>
+            <p>Instant confirmation via UPI (GPay, PhonePe, Paytm), Visa/Mastercard/RuPay cards, Net Banking, and
+              wallets.</p>
+          </article>
+
+          <article class="tilt-card reveal">
+            <div class="tilt-card__icon" data-icon="clock"></div>
+            <h3 class="tilt-card__title">Cancellation Charges</h3>
+            <p>Only 15% cancellation fee when cancelled more than 24 hours before departure; 25% between 12 and 24
+              hours.</p>
+          </article>
+
+          <article class="tilt-card reveal">
+            <div class="tilt-card__icon" data-icon="refreshCw"></div>
+            <h3 class="tilt-card__title">Refund Conditions</h3>
+            <p>100% full refund if an operator cancels a service. Standard refunds credit to original payment source in
+              3–5 business days.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. FREQUENTLY ASKED QUESTIONS -->
+    <section class="section" id="routes-faq" aria-labelledby="routes-faq-heading">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__eyebrow">Route &amp; Fare Help</span>
+          <h2 class="section__title" id="routes-faq-heading">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="accordion reveal">
+          <div class="accordion__item is-open">
+            <button type="button" class="accordion__trigger" aria-expanded="true">
+              <span>How do I find buses between two cities?</span>
+              <span class="accordion__icon" data-icon="chevronDown"></span>
+            </button>
+            <div class="accordion__content">
+              Select your origin city, destination city, and journey date in the Route Search Section at the top of this
+              page and click "Search Buses" to view all matching coaches.
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button type="button" class="accordion__trigger" aria-expanded="false">
+              <span>Are fares fixed?</span>
+              <span class="accordion__icon" data-icon="chevronDown"></span>
+            </button>
+            <div class="accordion__content">
+              Fares are set directly by our verified fleet operators based on coach category (Volvo, Sleeper, Seater)
+              and season. Once you lock your seat on RouteGo, your fare is 100% fixed.
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button type="button" class="accordion__trigger" aria-expanded="false">
+              <span>Can I change my boarding point?</span>
+              <span class="accordion__icon" data-icon="chevronDown"></span>
+            </button>
+            <div class="accordion__content">
+              Yes, you can choose your exact boarding and dropping point during Seat Selection, or request a boarding
+              point update up to 4 hours before departure via your Dashboard.
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button type="button" class="accordion__trigger" aria-expanded="false">
+              <span>Are return tickets available?</span>
+              <span class="accordion__icon" data-icon="chevronDown"></span>
+            </button>
+            <div class="accordion__content">
+              Yes! Add an optional Return Date in the search bar and use promo code <strong
+                class="mono">ROUNDTRIP18</strong> to save 18% on your round-trip journey.
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button type="button" class="accordion__trigger" aria-expanded="false">
+              <span>What happens if a bus is delayed?</span>
+              <span class="accordion__icon" data-icon="chevronDown"></span>
+            </button>
+            <div class="accordion__content">
+              You receive live GPS SMS/Dashboard alerts for any highway delay. If a coach is delayed by more than 2
+              hours at origin, you may opt for an alternate coach or a 100% full refund.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. FINAL CTA -->
+    <section class="section section--alt" style="text-align:center;" aria-labelledby="rf-final-cta">
+      <div class="container reveal">
+        <span class="section__eyebrow">Instant Seat Lock</span>
+        <h2 id="rf-final-cta" class="section__title">Find Your Route. Book Your Seat.</h2>
+        <p class="section__subtitle" style="max-width:600px;margin-inline:auto;margin-block-end:var(--space-3);">
+          Select your coach above or jump straight to our live seat map.
+        </p>
+        <a href="#route-search" class="btn btn--primary btn--lg">
+          <span data-icon="search"></span>
+          <span>Search Buses</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- 11. FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <a href="../index.html" class="navbar__brand" style="margin-block-end:var(--space-2);">
+            <span class="navbar__brand-icon" data-icon="bus"></span>
+            <span>Route<span>Go</span></span>
+          </a>
+          <p style="font-size:0.9rem;margin-block-end:var(--space-2);">
+            RouteGo is South &amp; Central India's modern intercity bus ticket booking agency. We connect travelers with
+            verified luxury sleeper and seater coaches, transparent pricing, and instant e-tickets.
+          </p>
+          <p style="font-size:0.85rem;color:var(--amber);" class="mono">24/7 Helpline: +91 44 4800 9900 •
+            care@routego.in</p>
+          <div class="social-links" style="margin-block-start:var(--space-3);" aria-label="Social media links">
+            <a href="https://facebook.com" class="social-link social-link--facebook" target="_blank"
+              rel="noopener noreferrer" aria-label="Facebook" title="Follow us on Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </a>
+            <a href="https://instagram.com" class="social-link social-link--instagram" target="_blank"
+              rel="noopener noreferrer" aria-label="Instagram" title="Follow us on Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg>
+            </a>
+            <a href="https://wa.me/914448009900" class="social-link social-link--whatsapp" target="_blank"
+              rel="noopener noreferrer" aria-label="WhatsApp" title="Chat on WhatsApp">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+            </a>
+            <a href="https://x.com" class="social-link social-link--x" target="_blank" rel="noopener noreferrer"
+              aria-label="X (formerly Twitter)" title="Follow us on X">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="site-footer__title">Quick Links</h3>
+          <ul class="site-footer__links">
+            <li><a href="../index.html">Home 1 (Main Landing)</a></li>
+            <li><a href="home-2.html">Home 2 (Travel Discovery)</a></li>
+            <li><a href="routes-fares.html">Routes &amp; Fares</a></li>
+            <li><a href="offers.html">Special Offers &amp; Deals</a></li>
+            <li><a href="about.html">About RouteGo</a></li>
+            <li><a href="dashboard.html">Traveler Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="site-footer__title">Popular Routes</h3>
+          <ul class="site-footer__links">
+            <li><a href="search-results.html" data-route-from="Chennai" data-route-to="Bangalore">Chennai to Bangalore
+                Bus</a></li>
+            <li><a href="search-results.html" data-route-from="Bangalore" data-route-to="Hyderabad">Bangalore to
+                Hyderabad Bus</a></li>
+            <li><a href="search-results.html" data-route-from="Chennai" data-route-to="Coimbatore">Chennai to Coimbatore
+                Bus</a></li>
+            <li><a href="search-results.html" data-route-from="Hyderabad" data-route-to="Vijayawada">Hyderabad to
+                Vijayawada Bus</a></li>
+            <li><a href="search-results.html" data-route-from="Madurai" data-route-to="Chennai">Madurai to Chennai
+                Bus</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="site-footer__title">Bus Services</h3>
+          <ul class="site-footer__links">
+            <li><a href="routes-fares.html">Volvo B11R Multi-Axle Sleeper</a></li>
+            <li><a href="routes-fares.html">Scania Luxury Night Coaches</a></li>
+            <li><a href="routes-fares.html">AC Sleeper (2+1 Berths)</a></li>
+            <li><a href="routes-fares.html">Executive AC Recliner Seater</a></li>
+            <li><a href="routes-fares.html">Non-AC Air-Suspension Coaches</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="site-footer__title">Customer Support &amp; Policies</h3>
+          <ul class="site-footer__links">
+            <li><a href="help-support.html">Help &amp; Support Center</a></li>
+            <li><a href="faq.html">Frequently Asked Questions</a></li>
+            <li><a href="contact.html">Contact Information</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-conditions.html">Terms &amp; Conditions</a></li>
+            <li><a href="cancellation-policy.html">Cancellation &amp; Refund Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+            <div class="site-footer__bottom">
+        <p>&copy; 2026 RouteGo Bus Ticket Booking Agency Pvt. Ltd. All Rights Reserved.</p>
+        <div class="site-footer__legal-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-conditions.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top (Back to Top) Button -->
+  <button type="button" class="scroll-top-btn js-scroll-top" aria-label="Scroll to top of page" title="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+      stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 19V5" />
+      <path d="m5 12 7-7 7 7" />
+    </svg>
+  </button>
+
+  <script src="../assets/js/plugins/data.js"></script>
+  <script type="module" src="../assets/js/main.js"></script>
+  <script type="module" src="../assets/js/booking.js"></script>
+</body>
+
+</html>

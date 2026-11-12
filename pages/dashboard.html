@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traveler Dashboard | Real-Time Booking &amp; Passenger Portal | RouteGo</title>
+  <meta name="description" content="Manage your active bus reservations, download QR e-tickets, request refunds, and save passenger profiles on the RouteGo Traveler Dashboard.">
+  <meta property="og:title" content="Traveler Dashboard | RouteGo">
+  <meta property="og:description" content="Manage active bookings, live telemetry, cancellations, and saved passengers.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://routego.example.com/pages/dashboard.html">
+  <link rel="canonical" href="https://routego.example.com/pages/dashboard.html">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="alternate icon" type="image/png" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../favicon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="bus-progress-bar" aria-hidden="true">
+    <div class="bus-progress-bar__fill">
+      <span class="bus-progress-bar__icon" data-icon="bus"></span>
+    </div>
+  </div>
+
+  <!-- 1. NAVIGATION BAR -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="../index.html" class="navbar__brand" aria-label="RouteGo Home">
+        <span class="navbar__brand-icon" data-icon="bus"></span>
+        <span>Route<span>Go</span></span>
+      </a>
+
+      <nav class="navbar__menu" aria-label="Primary Navigation">
+        <a href="../index.html" class="navbar__link">Home</a>
+        <a href="home-2.html" class="navbar__link">Home 2</a>
+        <a href="about.html" class="navbar__link">About</a>
+        <a href="routes-fares.html" class="navbar__link">Routes</a>
+        <a href="offers.html" class="navbar__link">Offers</a>
+        <a href="contact.html" class="navbar__link">Contact</a>
+        <a href="dashboard.html" class="navbar__link is-active">Dashboard</a>
+      </nav>
+
+      <div class="navbar__actions">
+        <button type="button" class="icon-btn js-theme-toggle" aria-label="Switch to Light Mode" title="Switch to Light Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+        </button>
+        <button type="button" class="icon-btn js-rtl-toggle" aria-label="Toggle RTL Direction" title="Toggle RTL Direction">RTL</button>
+        <a href="login.html" class="btn btn--primary btn--sm">Account</a>
+        <button type="button" class="icon-btn navbar__hamburger js-menu-open" aria-label="Open Navigation Menu" aria-expanded="false">
+          <span data-icon="menu"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <aside class="mobile-drawer" aria-hidden="true" aria-label="Mobile Navigation">
+    <div class="mobile-drawer__header">
+      <a href="../index.html" class="navbar__brand">
+        <span class="navbar__brand-icon" data-icon="bus"></span>
+        <span>Route<span>Go</span></span>
+      </a>
+      <button type="button" class="icon-btn js-menu-close" aria-label="Close Navigation Menu">
+        <span data-icon="x"></span>
+      </button>
+    </div>
+    <nav class="mobile-drawer__list" aria-label="Mobile Links">
+      <a href="../index.html" class="mobile-drawer__link">Home</a>
+      <a href="home-2.html" class="mobile-drawer__link">Home 2</a>
+      <a href="about.html" class="mobile-drawer__link">About</a>
+      <a href="routes-fares.html" class="mobile-drawer__link">Routes</a>
+      <a href="offers.html" class="mobile-drawer__link">Offers</a>
+      <a href="contact.html" class="mobile-drawer__link">Contact</a>
+      <a href="login.html" class="mobile-drawer__link">Login</a>
+      <a href="dashboard.html" class="mobile-drawer__link is-active">Traveler Dashboard</a>
+    </nav>
+    <a href="routes-fares.html" class="btn btn--primary btn--full">Book Tickets</a>
+  </aside>
+
+  <!-- DASHBOARD WORKSPACE LAYOUT -->
+  <div class="dashboard-layout">
+    <!-- 2. SIDEBAR NAVIGATION -->
+    <aside class="dashboard-sidebar" aria-label="Dashboard Sidebar Navigation">
+      <nav class="dashboard-sidebar__nav">
+        <a href="#overview-section" class="dashboard-sidebar__link is-active" data-dash-tab="overview-section">
+          <span data-icon="compass"></span>
+          <span>Overview</span>
+        </a>
+        <a href="#quick-search" class="dashboard-sidebar__link" data-dash-tab="quick-search">
+          <span data-icon="search"></span>
+          <span>Search Buses</span>
+        </a>
+        <a href="#my-bookings" class="dashboard-sidebar__link" data-dash-tab="my-bookings">
+          <span data-icon="ticket"></span>
+          <span>My Bookings</span>
+        </a>
+        <a href="#upcoming-journeys" class="dashboard-sidebar__link" data-dash-tab="upcoming-journeys">
+          <span data-icon="bus"></span>
+          <span>Upcoming Journeys</span>
+        </a>
+        <a href="#recent-activity" class="dashboard-sidebar__link" data-dash-tab="recent-activity">
+          <span data-icon="clock"></span>
+          <span>Booking History</span>
+        </a>
+        <a href="#manage-cancellations" class="dashboard-sidebar__link" data-dash-tab="manage-cancellations">
+          <span data-icon="refreshCw"></span>
+          <span>Cancelled Tickets</span>
+        </a>
+        <a href="#saved-passengers" class="dashboard-sidebar__link" data-dash-tab="saved-passengers">
+          <span data-icon="users"></span>
+          <span>Saved Passengers</span>
+        </a>
+        <a href="#profile-settings" class="dashboard-sidebar__link" data-dash-tab="profile-settings">
+          <span data-icon="shield"></span>
+          <span>My Profile</span>
+        </a>
+        <a href="#dashboard-support" class="dashboard-sidebar__link" data-dash-tab="dashboard-support">
+          <span data-icon="headphones"></span>
+          <span>Help &amp; Support</span>
+        </a>
+        <a href="login.html" class="dashboard-sidebar__link" style="color:var(--coral);">
+          <span data-icon="x"></span>
+          <span>Logout</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- MAIN DASHBOARD WORKSPACE (TABBED PANELS) -->
+    <main class="dashboard-main" id="dashboardApp">
+      <div style="margin-block-end:var(--space-4);">
+        <span class="section__eyebrow">Live Traveler Workspace</span>
+        <h1 style="font-size:clamp(1.75rem, 3vw, 2.35rem);margin-block:0.25rem 0.4rem;">Traveler Dashboard</h1>
+        <p style="color:var(--text-secondary);">Manage your real-time bookings, download e-tickets, calculate refunds, and update saved traveler details.</p>
+      </div>
+
+      <!-- ====================================================================
+           TAB 1: DASHBOARD OVERVIEW (Summary KPI Cards & Quick Actions)
+           ==================================================================== -->
+      <section class="dashboard-panel is-active" id="overview-section" aria-labelledby="overview-heading">
+        <div style="margin-block-end:var(--space-3);">
+          <h2 id="overview-heading" style="font-size:1.45rem;margin-block-end:0.25rem;">Dashboard Overview</h2>
+          <p style="color:var(--text-secondary);font-size:0.95rem;">Executive snapshot of your travel metrics, active journeys, and quick account shortcuts.</p>
+        </div>
+
+        <!-- 4 KPI Metrics (Clickable to jump directly to specific views) -->
+        <div class="grid-4" style="margin-block-end:var(--space-4);">
+          <article class="tilt-card" style="cursor:pointer;" data-dash-switch="my-bookings" title="Click to view all bookings">
+            <div class="tilt-card__icon" data-icon="ticket"></div>
+            <div class="tilt-card__price" id="kpiTotalBookings">5</div>
+            <h3 class="tilt-card__title" style="font-size:1rem;">Total Bookings</h3>
+            <span style="font-size:0.8rem;color:var(--amber);margin-block-start:0.35rem;font-weight:600;">View All Bookings →</span>
+          </article>
+
+          <article class="tilt-card" style="cursor:pointer;" data-dash-switch="upcoming-journeys" title="Click to view upcoming journeys">
+            <div class="tilt-card__icon" data-icon="bus"></div>
+            <div class="tilt-card__price" id="kpiUpcomingTrips" style="color:var(--teal);">2</div>
+            <h3 class="tilt-card__title" style="font-size:1rem;">Upcoming Trips</h3>
+            <span style="font-size:0.8rem;color:var(--teal);margin-block-start:0.35rem;font-weight:600;">View Upcoming →</span>
+          </article>
+
+          <article class="tilt-card" style="cursor:pointer;" data-dash-switch="recent-activity" title="Click to view booking history">
+            <div class="tilt-card__icon" data-icon="checkCircle"></div>
+            <div class="tilt-card__price" id="kpiCompletedJourneys">1</div>
+            <h3 class="tilt-card__title" style="font-size:1rem;">Completed Journeys</h3>
+            <span style="font-size:0.8rem;color:var(--text-secondary);margin-block-start:0.35rem;font-weight:600;">View History →</span>
+          </article>
+
+          <article class="tilt-card" style="cursor:pointer;" data-dash-switch="manage-cancellations" title="Click to view cancellations and refunds">
+            <div class="tilt-card__icon" data-icon="refreshCw"></div>
+            <div class="tilt-card__price" id="kpiCancelledTickets" style="color:var(--coral);">2</div>
+            <h3 class="tilt-card__title" style="font-size:1rem;">Cancelled Tickets</h3>
+            <span style="font-size:0.8rem;color:var(--coral);margin-block-start:0.35rem;font-weight:600;">View Refunds →</span>
+          </article>
+        </div>
+
+        <!-- Overview Spotlight & Quick Shortcuts -->
+        <div class="grid-2">
+          <div class="tilt-card" style="align-items:flex-start;text-align:start;">
+            <div style="display:flex;align-items:center;justify-content:space-between;width:100%;margin-block-end:0.5rem;">
+              <span class="tilt-card__badge">Next Upcoming Journey</span>
+              <span class="status-badge status-badge--upcoming">Confirmed</span>
+            </div>
+            <h3 style="font-size:1.2rem;margin-block-end:0.25rem;">Chennai → Bangalore</h3>
+            <p style="font-size:0.88rem;color:var(--text-secondary);margin-block-end:var(--space-2);">KPN Royal Travels • Volvo Multi-Axle AC Sleeper</p>
+            <p class="mono" style="font-size:0.85rem;color:var(--amber);margin-block-end:var(--space-3);">Departs: 22:15 tonight • Koyambedu CMBT Lounge (Berth L4, L5)</p>
+            <div style="display:flex;gap:0.65rem;flex-wrap:wrap;">
+              <button type="button" class="btn btn--primary btn--sm" data-dash-switch="upcoming-journeys">View Journey Details</button>
+              <button type="button" class="btn btn--outline btn--sm" data-dash-switch="my-bookings">All Bookings</button>
+            </div>
+          </div>
+
+          <div class="search-panel" style="margin:0;">
+            <span class="section__eyebrow">Quick Navigation</span>
+            <h3 style="font-size:1.15rem;margin-block-end:0.5rem;">Frequently Used Actions</h3>
+            <p style="font-size:0.88rem;color:var(--text-secondary);margin-block-end:var(--space-3);">Jump straight to any workspace tool:</p>
+            <div style="display:flex;flex-direction:column;gap:0.5rem;">
+              <button type="button" class="btn btn--secondary btn--sm" data-dash-switch="quick-search" style="justify-content:space-between;">
+                <span>Book a New Coach Route</span>
+                <span>→</span>
+              </button>
+              <button type="button" class="btn btn--secondary btn--sm" data-dash-switch="saved-passengers" style="justify-content:space-between;">
+                <span>Manage Saved Passengers</span>
+                <span>→</span>
+              </button>
+              <button type="button" class="btn btn--secondary btn--sm" data-dash-switch="manage-cancellations" style="justify-content:space-between;">
+                <span>Cancel / Refund Desk</span>
+                <span>→</span>
+              </button>
+              <button type="button" class="btn btn--secondary btn--sm" data-dash-switch="dashboard-support" style="justify-content:space-between;">
+                <span>Get Traveler Help (24/7)</span>
+                <span>→</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           TAB 2: SEARCH BUSES (Dedicated Search Workspace)
+           ==================================================================== -->
+      <section class="dashboard-panel" id="quick-search" aria-labelledby="quick-search-heading">
+        <div style="margin-block-end:var(--space-3);">
+          <h2 id="quick-search-heading" style="font-size:1.45rem;margin-block-end:0.25rem;">Search Intercity Buses</h2>
+          <p style="color:var(--text-secondary);font-size:0.95rem;">Find and book verified Volvo B11R, Scania, and luxury sleeper coaches with instant seat reservation.</p>
+        </div>
+
+        <form class="search-panel js-bus-search-form" novalidate>
+          <div class="grid-4" style="align-items:end;">
+            <div class="form-group">
+              <label class="form-label" for="dashFrom">From (Boarding City)</label>
+              <select id="dashFrom" name="fromCity" class="form-control">
+                <option value="Chennai" selected>Chennai</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Coimbatore">Coimbatore</option>
+                <option value="Madurai">Madurai</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="dashTo">To (Destination City)</label>
+              <select id="dashTo" name="toCity" class="form-control">
+                <option value="Bangalore" selected>Bangalore</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Coimbatore">Coimbatore</option>
+                <option value="Kochi">Kochi</option>
+              </select>
+              <span class="form-error">Pick a different destination.</span>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="dashDate">Departure Date</label>
+              <input type="date" id="dashDate" name="journeyDate" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="dashPax">Passengers</label>
+              <div style="display:flex;gap:0.5rem;">
+                <select id="dashPax" name="passengers" class="form-control">
+                  <option value="1" selected>1 Passenger</option>
+                  <option value="2">2 Passengers</option>
+                  <option value="3">3 Passengers</option>
+                  <option value="4">4 Passengers</option>
+                </select>
+                <button type="submit" class="btn btn--primary">Find Buses</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <!-- ====================================================================
+           TAB 3: MY BOOKINGS (Detailed Bookings Directory)
+           ==================================================================== -->
+      <section class="dashboard-panel" id="my-bookings" aria-labelledby="my-bookings-heading">
+        <div style="margin-block-end:var(--space-3);">
+          <h2 id="my-bookings-heading" style="font-size:1.45rem;margin-block-end:0.25rem;">My Bookings</h2>
+          <p style="color:var(--text-secondary);font-size:0.95rem;">Comprehensive overview of all your confirmed, completed, and cancelled highway journeys.</p>
+        </div>
+        <div class="grid-2" id="myBookingsDetailedContainer"></div>
+      </section>
+
+      <!-- ====================================================================
+           TAB 4: UPCOMING JOURNEYS
+           ==================================================================== -->
+      <section class="dashboard-panel" id="upcoming-journeys" aria-labelledby="upcoming-heading">
+        <div style="margin-block-end:var(--space-3);">
+          <h2 id="upcoming-heading" style="font-size:1.45rem;margin-block-end:0.25rem;">Upcoming Journeys</h2>
+          <p style="color:var(--text-secondary);font-size:0.95rem;">Confirmed coach departures, live GPS links, boarding point directions, and instant QR boarding passes.</p>
+        </div>
+        <div class="grid-2" id="upcomingJourneysContainer" aria-live="polite">
+          <div class="skeleton" style="height:220px;"></div>
+          <div class="skeleton" style="height:220px;"></div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           TAB 5: BOOKING HISTORY & RECENT ACTIVITY
+           ==================================================================== -->
+      <section class="dashboard-panel" id="recent-activity" aria-labelledby="recent-heading">
+        <div style="margin-block-end:var(--space-3);">
+          <h2 id="recent-heading" style="font-size:1.45rem;margin-block-end:0.25rem;">Booking History &amp; Activity Log</h2>
+          <p style="color:var(--text-secondary);font-size:0.95rem;">Audit log of all your ticket transactions, completed trips, and invoice receipts.</p>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table" aria-label="Recent Booking Activity">
+            <thead>
+              <tr>
+                <th>Booking Date</th>
+                <th>Booking ID</th>
+                <th>Route &amp; Operator</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="recentActivityBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           TAB 6: CANCELLED TICKETS & REFUND MANAGEMENT
+           ==================================================================== -->
+      <section class="dashboard-panel" id="manage-cancellations" aria-labelledby="cancel-heading">
+        <div style="margin-block-end:var(--space-3);">
+          <h2 id="cancel-heading" style="font-size:1.45rem;margin-block-end:0.25rem;">Cancelled Tickets &amp; Refund Management</h2>
+          <p style="color:var(--text-secondary);font-size:0.95rem;">Calculate self-service refund amounts, submit cancellation requests, and track refund credits.</p>
+        </div>
+
+        <form class="search-panel" id="manageCancellationForm" style="margin-block-end:var(--space-4);" novalidate>
+          <h3 style="font-size:1.15rem;margin-block-end:var(--space-2);">Self-Service Ticket Cancellation</h3>
+          <div class="grid-2" style="margin-block-end:var(--space-3);">
+            <div class="form-group">
+              <label class="form-label" for="cancelBookingSelect">Select Active Booking to Cancel *</label>
+              <select id="cancelBookingSelect" class="form-control" required></select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="cancelReasonSelect">Cancellation Reason *</label>
+              <select id="cancelReasonSelect" class="form-control" required>
+                <option value="Change in travel schedule" selected>Change in travel schedule</option>
+                <option value="Booked alternate date or bus">Booked alternate date or bus</option>
+                <option value="Personal / medical emergency">Personal / medical emergency</option>
+                <option value="Trip postponed">Trip postponed</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid-3" style="margin-block-end:var(--space-3);text-align:center;">
+            <div style="background:rgba(255,92,77,0.12);padding:1rem;border-radius:var(--radius-sm);border:1px solid rgba(255,92,77,0.35);">
+              <small style="display:block;color:var(--text-secondary);">Applicable Charges</small>
+              <strong class="mono" id="cancelChargesValue" style="color:var(--coral);font-size:1.15rem;">₹294</strong>
+            </div>
+            <div style="background:rgba(25,211,181,0.12);padding:1rem;border-radius:var(--radius-sm);border:1px solid rgba(25,211,181,0.35);">
+              <small style="display:block;color:var(--text-secondary);">Refundable Amount</small>
+              <strong class="mono" id="cancelRefundableValue" style="color:var(--teal);font-size:1.25rem;">₹1,666</strong>
+            </div>
+            <div style="background:rgba(255,176,32,0.12);padding:1rem;border-radius:var(--radius-sm);border:1px solid rgba(255,176,32,0.35);">
+              <small style="display:block;color:var(--text-secondary);">Cancellation Status</small>
+              <strong class="mono" id="cancelLiveStatus" style="color:var(--amber);font-size:0.9rem;">Eligible for Instant Refund</strong>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn--coral">Confirm Cancellation</button>
+        </form>
+
+        <h3 style="font-size:1.2rem;margin-block-end:var(--space-2);">Refund Tracking History</h3>
+        <div class="table-wrap">
+          <table class="data-table" aria-label="Refund Tracking Table">
+            <thead>
+              <tr>
+                <th>Booking PNR</th>
+                <th>Refund Amount</th>
+                <th>Original Payment Method</th>
+                <th>Initiation Date</th>
+                <th>Current Status</th>
+                <th>Expected Processing Time</th>
+              </tr>
+            </thead>
+            <tbody id="refundTrackingBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           TAB 7: SAVED PASSENGERS DIRECTORY
+           ==================================================================== -->
+      <section class="dashboard-panel" id="saved-passengers" aria-labelledby="saved-pax-heading">
+        <div style="margin-block-end:var(--space-3);">
+          <h2 id="saved-pax-heading" style="font-size:1.45rem;margin-block-end:0.25rem;">Saved Passengers Directory</h2>
+          <p style="color:var(--text-secondary);font-size:0.95rem;">Save profiles for family, friends, and co-travelers for fast 1-click autofill during ticket booking.</p>
+        </div>
+
+        <div class="grid-3" id="savedPassengersList" style="margin-block-end:var(--space-4);"></div>
+
+        <form class="search-panel" id="savedPassengerForm" novalidate>
+          <h3 style="font-size:1.15rem;margin-block-end:var(--space-2);">Add or Edit Saved Passenger</h3>
+          <input type="hidden" id="savedPaxId" value="">
+          <div class="grid-4" style="align-items:end;">
+            <div class="form-group">
+              <label class="form-label" for="savedPaxName">Full Name *</label>
+              <input type="text" id="savedPaxName" class="form-control" placeholder="Passenger Name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="savedPaxAge">Age *</label>
+              <input type="number" id="savedPaxAge" class="form-control" min="1" max="110" placeholder="Age" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="savedPaxGender">Gender *</label>
+              <select id="savedPaxGender" class="form-control">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="savedPaxContact">Contact Number *</label>
+              <div style="display:flex;gap:0.5rem;">
+                <input type="tel" id="savedPaxContact" class="form-control" placeholder="+91 98401 00000" required>
+                <button type="submit" id="savedPaxSubmitBtn" class="btn btn--primary btn--sm">Add</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <!-- ====================================================================
+           TAB 8: MY PROFILE & ACCOUNT SETTINGS (With Notifications)
+           ==================================================================== -->
+      <section class="dashboard-panel" id="profile-settings" aria-labelledby="profile-heading">
+        <div style="margin-block-end:var(--space-3);">
+          <h2 id="profile-heading" style="font-size:1.45rem;margin-block-end:0.25rem;">My Profile &amp; Account Settings</h2>
+          <p style="color:var(--text-secondary);font-size:0.95rem;">Manage your traveler contact credentials, security preferences, and real-time travel alerts.</p>
+        </div>
+
+        <div class="search-panel" style="margin-block-end:var(--space-4);">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-3);margin-block-end:var(--space-3);">
+            <img src="../assets/images/people/person-dashboard-user.jpg" alt="Profile photo of Vikram Aditya" width="84" height="84" style="width:84px;height:84px;border-radius:50%;object-fit:cover;border:3px solid var(--amber);">
+            <div>
+              <h3 style="font-size:1.25rem;margin-block-end:0.2rem;">Vikram Aditya</h3>
+              <p class="mono" style="font-size:0.86rem;color:var(--teal);">RouteGo Gold Highway Member • Verified Traveler</p>
+            </div>
+          </div>
+
+          <form class="js-validated-form" data-success-message="Profile & Account settings updated!" novalidate>
+            <div class="grid-3" style="margin-block-end:var(--space-2);">
+              <div class="form-group">
+                <label class="form-label" for="profName">Full Name *</label>
+                <input type="text" id="profName" class="form-control" value="Vikram Aditya" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="profEmail">Email Address *</label>
+                <input type="email" id="profEmail" class="form-control" value="vikram.aditya@routego.in" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="profMobile">Mobile Number *</label>
+                <input type="tel" id="profMobile" class="form-control" value="+91 98401 22334" required>
+              </div>
+            </div>
+
+            <div class="grid-2" style="margin-block-end:var(--space-3);">
+              <div class="form-group">
+                <label class="form-label" for="profNewPwd">Change Password (Optional)</label>
+                <input type="password" id="profNewPwd" class="form-control" placeholder="Enter new password">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="profPhoto">Profile Photo Preference</label>
+                <select id="profPhoto" class="form-control">
+                  <option value="default">Verified Traveler Portrait (Active)</option>
+                  <option value="initials">Initials Badge (VA)</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn--primary">Update Personal Details</button>
+          </form>
+        </div>
+
+        <h3 style="font-size:1.25rem;margin-block-end:var(--space-2);">Recent Traveler Notifications</h3>
+        <div class="grid-3">
+          <article class="tilt-card">
+            <span class="tilt-card__badge">Booking Confirmation</span>
+            <h3 class="tilt-card__title" style="font-size:1.05rem;">PNR RG-2026-8841 Confirmed</h3>
+            <p>Your seats L4, L5 on KPN Royal Travels (Chennai → Bangalore) are confirmed.</p>
+          </article>
+          <article class="tilt-card">
+            <span class="tilt-card__badge tilt-card__badge--amber">Journey Reminder</span>
+            <h3 class="tilt-card__title" style="font-size:1.05rem;">Report 20 Mins Prior to Boarding</h3>
+            <p>Koyambedu CMBT Lounge boarding starts at 21:30 for your upcoming trip.</p>
+          </article>
+          <article class="tilt-card">
+            <span class="tilt-card__badge">Departure Update</span>
+            <h3 class="tilt-card__title" style="font-size:1.05rem;">Coach TN-01-AN-8899 Assigned</h3>
+            <p>Live GPS tracking link activated for your Volvo Multi-Axle Sleeper coach.</p>
+          </article>
+          <article class="tilt-card">
+            <span class="tilt-card__badge tilt-card__badge--coral">Cancellation Confirmation</span>
+            <h3 class="tilt-card__title" style="font-size:1.05rem;">PNR RG-2026-5190 Cancelled</h3>
+            <p>Your cancellation request for Bangalore → Kochi has been processed.</p>
+          </article>
+          <article class="tilt-card">
+            <span class="tilt-card__badge">Refund Update</span>
+            <h3 class="tilt-card__title" style="font-size:1.05rem;">₹1,173 Refund Initiated</h3>
+            <p>Refund ARN-889021 sent to HDFC Visa Card •••• 4419 (3–5 business days).</p>
+          </article>
+          <article class="tilt-card">
+            <span class="tilt-card__badge tilt-card__badge--amber">Promotional Notification</span>
+            <h3 class="tilt-card__title" style="font-size:1.05rem;">Weekend 15% Coupon Unlocked</h3>
+            <p>Use code <strong class="mono">WEEKEND15</strong> on your next Friday–Sunday journey.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           TAB 9: HELP & SUPPORT
+           ==================================================================== -->
+      <section class="dashboard-panel" id="dashboard-support" aria-labelledby="dash-support-heading">
+        <div style="margin-block-end:var(--space-3);">
+          <h2 id="dash-support-heading" style="font-size:1.45rem;margin-block-end:0.25rem;">Help &amp; Support</h2>
+          <p style="color:var(--text-secondary);font-size:0.95rem;">24/7 dedicated traveler escalation helpline, live dispute resolution, and fast support tickets.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="tilt-card">
+            <div class="tilt-card__icon" data-icon="headphones"></div>
+            <h3 class="tilt-card__title">24/7 Booking &amp; Cancellation Assistance</h3>
+            <p style="margin-block-end:var(--space-2);">Need immediate help with a boarding point, delayed bus, or refund query? Our priority traveler desk is always online.</p>
+            <p class="mono" style="color:var(--amber);margin-block-end:var(--space-2);">Priority Line: +91 44 4800 9900 • priority@routego.in</p>
+            <div class="tilt-card__actions" style="gap:0.65rem;">
+              <a href="faq.html" class="btn btn--outline btn--sm">View FAQs</a>
+              <a href="help-support.html" class="btn btn--secondary btn--sm">Support Center</a>
+            </div>
+          </div>
+
+          <form class="search-panel js-validated-form" data-success-message="Support ticket #SR-4920 created! Our team will respond within 30 minutes." novalidate>
+            <h3 style="font-size:1.1rem;margin-block-end:var(--space-2);">Submit Support Request</h3>
+            <div class="form-group" style="margin-block-end:var(--space-2);">
+              <label class="form-label" for="supPnr">Related Booking PNR *</label>
+              <input type="text" id="supPnr" class="form-control" value="RG-2026-8841" required>
+            </div>
+            <div class="form-group" style="margin-block-end:var(--space-2);">
+              <label class="form-label" for="supMessage">Issue Description *</label>
+              <textarea id="supMessage" rows="3" class="form-control" placeholder="Describe your booking or refund question..." required></textarea>
+              <span class="form-error">Please enter your message.</span>
+            </div>
+            <button type="submit" class="btn btn--primary btn--sm">Submit Request</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <a href="../index.html" class="navbar__brand" style="margin-block-end:var(--space-2);">
+            <span class="navbar__brand-icon" data-icon="bus"></span>
+            <span>Route<span>Go</span></span>
+          </a>
+          <p style="font-size:0.9rem;margin-block-end:var(--space-2);">
+            RouteGo is South &amp; Central India's modern intercity bus ticket booking agency. We connect travelers with verified luxury sleeper and seater coaches, transparent pricing, and instant e-tickets.
+          </p>
+          <p style="font-size:0.85rem;color:var(--amber);" class="mono">24/7 Helpline: +91 44 4800 9900 • care@routego.in</p>
+          <div class="social-links" style="margin-block-start:var(--space-3);" aria-label="Social media links">
+            <a href="https://facebook.com" class="social-link social-link--facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Follow us on Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://instagram.com" class="social-link social-link--instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Follow us on Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://wa.me/914448009900" class="social-link social-link--whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="Chat on WhatsApp">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+            <a href="https://x.com" class="social-link social-link--x" target="_blank" rel="noopener noreferrer" aria-label="X (formerly Twitter)" title="Follow us on X">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="site-footer__title">Quick Links</h3>
+          <ul class="site-footer__links">
+            <li><a href="../index.html">Home 1 (Main Landing)</a></li>
+            <li><a href="home-2.html">Home 2 (Travel Discovery)</a></li>
+            <li><a href="routes-fares.html">Routes &amp; Fares</a></li>
+            <li><a href="offers.html">Special Offers &amp; Deals</a></li>
+            <li><a href="about.html">About RouteGo</a></li>
+            <li><a href="dashboard.html">Traveler Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="site-footer__title">Popular Routes</h3>
+          <ul class="site-footer__links">
+            <li><a href="search-results.html" data-route-from="Chennai" data-route-to="Bangalore">Chennai to Bangalore Bus</a></li>
+            <li><a href="search-results.html" data-route-from="Bangalore" data-route-to="Hyderabad">Bangalore to Hyderabad Bus</a></li>
+            <li><a href="search-results.html" data-route-from="Chennai" data-route-to="Coimbatore">Chennai to Coimbatore Bus</a></li>
+            <li><a href="search-results.html" data-route-from="Hyderabad" data-route-to="Vijayawada">Hyderabad to Vijayawada Bus</a></li>
+            <li><a href="search-results.html" data-route-from="Madurai" data-route-to="Chennai">Madurai to Chennai Bus</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="site-footer__title">Bus Services</h3>
+          <ul class="site-footer__links">
+            <li><a href="routes-fares.html">Volvo B11R Multi-Axle Sleeper</a></li>
+            <li><a href="routes-fares.html">Scania Luxury Night Coaches</a></li>
+            <li><a href="routes-fares.html">AC Sleeper (2+1 Berths)</a></li>
+            <li><a href="routes-fares.html">Executive AC Recliner Seater</a></li>
+            <li><a href="routes-fares.html">Non-AC Air-Suspension Coaches</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="site-footer__title">Customer Support &amp; Policies</h3>
+          <ul class="site-footer__links">
+            <li><a href="help-support.html">Help &amp; Support Center</a></li>
+            <li><a href="faq.html">Frequently Asked Questions</a></li>
+            <li><a href="contact.html">Contact Information</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-conditions.html">Terms &amp; Conditions</a></li>
+            <li><a href="cancellation-policy.html">Cancellation &amp; Refund Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p>&copy; 2026 RouteGo Bus Ticket Booking Agency Pvt. Ltd. All Rights Reserved.</p>
+        <div class="site-footer__legal-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-conditions.html">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button type="button" class="scroll-top-btn js-scroll-top" aria-label="Scroll to top of page" title="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 19V5"/>
+      <path d="m5 12 7-7 7 7"/>
+    </svg>
+  </button>
+
+  <script src="../assets/js/plugins/data.js"></script>
+  <script type="module" src="../assets/js/main.js"></script>
+  <script type="module" src="../assets/js/dashboard.js"></script>
+</body>
+</html>

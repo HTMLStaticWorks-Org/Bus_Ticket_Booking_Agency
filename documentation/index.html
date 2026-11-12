@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RouteGo Documentation | Installation &amp; Customization Guide</title>
+  <meta name="description" content="Complete technical documentation for the RouteGo Bus Ticket Booking Agency HTML/CSS/JS template: installation, colors, fonts, booking flow, and support.">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="alternate icon" type="image/png" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../favicon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="../index.html" class="navbar__brand">
+        <span class="navbar__brand-icon" data-icon="bus"></span>
+        <span>Route<span>Go</span> Docs</span>
+      </a>
+      <div class="navbar__actions">
+        <button type="button" class="icon-btn js-theme-toggle" aria-label="Toggle Theme"></button>
+        <button type="button" class="icon-btn js-rtl-toggle" aria-label="Toggle RTL">RTL</button>
+        <a href="../index.html" class="btn btn--primary btn--sm">Launch Live Site</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="section">
+    <div class="container" style="max-width:980px;">
+      <div class="section__header">
+        <span class="section__eyebrow">Developer &amp; Template Guide v1.0</span>
+        <h1>RouteGo Technical Documentation</h1>
+        <p class="section__subtitle">Installation, Customization (Colors, Fonts, Content), Page Structure, Credits, Changelog, and Support.</p>
+      </div>
+
+      <!-- 1. INSTALLATION -->
+      <section class="search-panel" style="margin-block-end:var(--space-3);">
+        <h2 style="font-size:1.45rem;color:var(--amber);margin-block-end:0.65rem;">1. Installation</h2>
+        <p style="margin-block-end:0.75rem;">RouteGo is built with zero build-step dependencies using clean HTML5, CSS3 custom properties, and vanilla ES6+ JavaScript modules.</p>
+        <ol style="display:flex;flex-direction:column;gap:0.45rem;color:var(--text-secondary);">
+          <li>1. Unzip or clone the project folder onto your machine or web host.</li>
+          <li>2. Serve the root folder using any static HTTP server (e.g. <span class="mono">python -m http.server 8080</span>, VS Code Live Server, Netlify, Vercel, or Apache/Nginx).</li>
+          <li>3. Open <span class="mono">http://localhost:8080/index.html</span> in your browser.</li>
+        </ol>
+      </section>
+
+      <!-- 2. CUSTOMIZATION (COLORS, FONTS, CONTENT) -->
+      <section class="search-panel" style="margin-block-end:var(--space-3);">
+        <h2 style="font-size:1.45rem;color:var(--amber);margin-block-end:0.65rem;">2. Customization (Colors, Fonts, Content &amp; Integrations)</h2>
+        <ul style="display:flex;flex-direction:column;gap:0.65rem;color:var(--text-secondary);">
+          <li><strong>• Color Palette:</strong> Edit the CSS custom properties in <span class="mono">assets/css/style.css</span> under <span class="mono">:root</span> (<span class="mono">--midnight: #0A0F24</span>, <span class="mono">--asphalt: #121A33</span>, <span class="mono">--amber: #FFB020</span>, <span class="mono">--coral: #FF5C4D</span>, <span class="mono">--teal: #19D3B5</span>, <span class="mono">--cream: #FFF7E8</span>).</li>
+          <li><strong>• Typography:</strong> Modify <span class="mono">--font-display</span> (Sora), <span class="mono">--font-body</span> (DM Sans), and <span class="mono">--font-mono</span> (JetBrains Mono) in <span class="mono">assets/css/style.css</span>.</li>
+          <li><strong>• Routes, Buses &amp; Promo Codes:</strong> Update <span class="mono">window.ROUTEGO_DATA</span> inside <span class="mono">assets/js/plugins/data.js</span>.</li>
+          <li><strong>• Payment &amp; Auth Gateways:</strong> Search for <span class="mono">TODO:</span> comments inside <span class="mono">assets/js/main.js</span>, <span class="mono">assets/js/booking.js</span>, and <span class="mono">pages/payment.html</span> to wire in Stripe, Razorpay, Formspree, or OAuth APIs.</li>
+        </ul>
+      </section>
+
+      <!-- 3. PAGE STRUCTURE -->
+      <section class="search-panel" style="margin-block-end:var(--space-3);">
+        <h2 style="font-size:1.45rem;color:var(--amber);margin-block-end:0.65rem;">3. Page Structure (21 HTML Pages)</h2>
+        <div class="grid-2" style="font-size:0.9rem;">
+          <ul style="display:flex;flex-direction:column;gap:0.35rem;">
+            <li>• <a href="../index.html" style="color:var(--teal);">index.html</a> — Home 1 (Main Landing Page, Hero Model A)</li>
+            <li>• <a href="../pages/home-2.html" style="color:var(--teal);">pages/home-2.html</a> — Home 2 (Travel Discovery, Hero Model B)</li>
+            <li>• <a href="../pages/routes-fares.html" style="color:var(--teal);">pages/routes-fares.html</a> — Routes &amp; Fares Comparison</li>
+            <li>• <a href="../pages/offers.html" style="color:var(--teal);">pages/offers.html</a> — Special Offers &amp; Live Countdowns</li>
+            <li>• <a href="../pages/login.html" style="color:var(--teal);">pages/login.html</a> — Login &amp; Sign Up Modal Model</li>
+            <li>• <a href="../pages/signup.html" style="color:var(--teal);">pages/signup.html</a> — Dedicated Sign Up &amp; Account Creation</li>
+            <li>• <a href="../pages/dashboard.html" style="color:var(--teal);">pages/dashboard.html</a> — Private Traveler Dashboard</li>
+            <li>• <a href="../pages/search-results.html" style="color:var(--teal);">pages/search-results.html</a> — Step 1: Bus Search Results</li>
+            <li>• <a href="../pages/seat-selection.html" style="color:var(--teal);">pages/seat-selection.html</a> — Step 2: Interactive Seat Map</li>
+            <li>• <a href="../pages/passenger-details.html" style="color:var(--teal);">pages/passenger-details.html</a> — Step 3: Passenger Manifest</li>
+            <li>• <a href="../pages/payment.html" style="color:var(--teal);">pages/payment.html</a> — Step 4: Demo / Test Mode Checkout</li>
+          </ul>
+          <ul style="display:flex;flex-direction:column;gap:0.35rem;">
+            <li>• <a href="../pages/confirmation.html" style="color:var(--teal);">pages/confirmation.html</a> — Step 5: Verified QR E-Ticket</li>
+            <li>• <a href="../pages/about.html" style="color:var(--teal);">pages/about.html</a> — About Us</li>
+            <li>• <a href="../pages/contact.html" style="color:var(--teal);">pages/contact.html</a> — Contact Us &amp; Map Placeholder</li>
+            <li>• <a href="../pages/faq.html" style="color:var(--teal);">pages/faq.html</a> — Categorized FAQ Directory</li>
+            <li>• <a href="../pages/cancellation-policy.html" style="color:var(--teal);">pages/cancellation-policy.html</a> — Cancellation &amp; Refund Policy</li>
+            <li>• <a href="../pages/privacy-policy.html" style="color:var(--teal);">pages/privacy-policy.html</a> — Privacy Policy</li>
+            <li>• <a href="../pages/terms-conditions.html" style="color:var(--teal);">pages/terms-conditions.html</a> — Terms &amp; Conditions</li>
+            <li>• <a href="../pages/help-support.html" style="color:var(--teal);">pages/help-support.html</a> — Help &amp; Support Center</li>
+            <li>• <a href="../pages/404.html" style="color:var(--teal);">pages/404.html</a> — Custom 404 Error Page</li>
+            <li>• <a href="../pages/coming-soon.html" style="color:var(--teal);">pages/coming-soon.html</a> — Coming Soon Page</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 4. CREDITS, 5. CHANGELOG, 6. SUPPORT -->
+      <section class="search-panel">
+        <h2 style="font-size:1.45rem;color:var(--amber);margin-block-end:0.65rem;">4. Credits, Changelog &amp; Support</h2>
+        <p style="margin-block-end:0.5rem;"><strong>Credits:</strong> Google Fonts (Sora, DM Sans, JetBrains Mono), Inline SVG Icon System (Lucide-compatible), and local responsive WebP/JPG photorealistic travel photography stored in <span class="mono">assets/images/</span>.</p>
+        <p style="margin-block-end:0.5rem;"><strong>Changelog (v1.0.0 — Nov 2026):</strong> Initial production release featuring 21 pages, connected 5-step booking engine, 3D tilt cards, Dark/Light + RTL support, and WCAG 2.1 AA compliance.</p>
+        <p><strong>Support:</strong> Contact <span class="mono" style="color:var(--teal);">support@routego.in</span> or visit <a href="../pages/help-support.html" style="color:var(--amber);text-decoration:underline;">Help &amp; Support</a>.</p>
+      </section>
+    </div>
+  </main>
+
+  <!-- Scroll to Top (Back to Top) Button -->
+  <button type="button" class="scroll-top-btn js-scroll-top" aria-label="Scroll to top of page" title="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 19V5"/>
+      <path d="m5 12 7-7 7 7"/>
+    </svg>
+  </button>
+
+
+  <script src="../assets/js/plugins/data.js"></script>
+  <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>
+
