@@ -20,6 +20,15 @@
   text-align: center;
 }
 
+@media (max-width: 768px) {
+
+  [dir="rtl"] .hero-home2__text,
+  [dir="rtl"] .split-row>div:first-child,
+  [dir="rtl"] .split-row>div:not(.split-row__media) {
+    text-align: center;
+  }
+}
+
 [dir="rtl"] .mobile-drawer {
   transform: translateX(-100%);
 }
@@ -43,4 +52,3 @@
 [dir="rtl"] .road-divider__stripes {
   animation-direction: reverse;
 }
-

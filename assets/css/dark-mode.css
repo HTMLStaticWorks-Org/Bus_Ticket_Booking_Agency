@@ -5,6 +5,7 @@
    ========================================================================== */
 
 [data-theme="light"] {
+  color-scheme: light;
   --bg-body: var(--cream);
   --bg-surface: #FFFFFF;
   --bg-surface-2: #F5EBD6;
@@ -40,7 +41,7 @@
 [data-theme="light"] .hero-home1__overlay,
 [data-theme="light"] .hero-home2__overlay,
 [data-theme="light"] .page-hero__overlay {
-  background: 
+  background:
     radial-gradient(ellipse at 50% 36%, rgba(10, 15, 36, 0.42) 0%, rgba(10, 15, 36, 0.72) 75%, rgba(10, 15, 36, 0.92) 100%),
     linear-gradient(180deg, rgba(10, 15, 36, 0.52) 0%, rgba(10, 15, 36, 0.2) 32%, rgba(10, 15, 36, 0.72) 75%, rgba(10, 15, 36, 0.96) 100%);
 }
@@ -54,7 +55,7 @@
 
 [data-theme="light"] .hero-home1__text p,
 [data-theme="light"] .hero-home2__text p,
-[data-theme="light"] .hero-home2__grid > div:first-child p,
+[data-theme="light"] .hero-home2__grid>div:first-child p,
 [data-theme="light"] .page-hero p {
   color: #F1F5F9 !important;
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8), 0 2px 16px rgba(0, 0, 0, 0.5);
@@ -142,6 +143,42 @@
   box-shadow: 0 0 0 3px rgba(255, 176, 32, 0.25);
 }
 
+[data-theme="light"] input[type="date"] {
+  color-scheme: light !important;
+}
+
+[data-theme="light"] input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  border-radius: 6px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="%230A0F24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="3" ry="3"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 20px 20px !important;
+  filter: none !important;
+  opacity: 0.75 !important;
+  padding: 4px;
+  transition: opacity var(--transition-fast), transform var(--transition-fast), filter var(--transition-fast);
+}
+
+[data-theme="light"] input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1 !important;
+  transform: scale(1.12);
+  filter: drop-shadow(0 0 4px rgba(255, 176, 32, 0.5)) !important;
+}
+
+[data-theme="light"] .navbar__actions .icon-btn {
+  background: #FFFFFF;
+  border-color: rgba(10, 15, 36, 0.14);
+  color: #0A0F24;
+  border-radius: var(--radius-pill);
+}
+
+[data-theme="light"] .navbar__actions .icon-btn:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+  background: rgba(255, 176, 32, 0.12);
+}
+
 [data-theme="light"] .swap-btn {
   background: rgba(25, 211, 181, 0.14);
   border: 1.5px solid #0D9488;
@@ -153,7 +190,8 @@
   color: #FFFFFF;
 }
 
-[data-theme="light"] .search-panel__suggestions strong {
+[data-theme="light"] .search-panel__suggestions strong,
+[data-theme="light"] .search-panel__suggestions-label {
   color: #B45309;
 }
 
@@ -191,13 +229,11 @@
 }
 
 [data-theme="light"] .road-divider__stripes {
-  background: repeating-linear-gradient(
-    90deg,
-    #0A0F24 0px,
-    #0A0F24 36px,
-    transparent 36px,
-    transparent 76px
-  );
+  background: repeating-linear-gradient(90deg,
+      #0A0F24 0px,
+      #0A0F24 36px,
+      transparent 36px,
+      transparent 76px);
   opacity: 0.35;
 }
 
@@ -206,13 +242,36 @@
   color: var(--midnight);
 }
 
+[data-theme="light"] .mobile-drawer__actions {
+  background: rgba(10, 15, 36, 0.04);
+  border-color: rgba(10, 15, 36, 0.12);
+}
+
+[data-theme="light"] .mobile-drawer__actions .icon-btn {
+  background: #FFFFFF;
+  border-color: rgba(10, 15, 36, 0.14);
+  color: #0A0F24;
+}
+
+[data-theme="light"] .mobile-drawer__actions .icon-btn:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+  background: rgba(255, 176, 32, 0.12);
+}
+
+[data-theme="light"] .timeline-step {
+  background: #FFFFFF;
+  border-color: rgba(10, 15, 36, 0.1);
+  box-shadow: 0 4px 16px rgba(10, 15, 36, 0.04);
+}
+
 [data-theme="light"] .sticky-booking-bar {
   background: rgba(255, 247, 232, 0.96);
   box-shadow: 0 -8px 24px rgba(10, 15, 36, 0.12);
 }
 
 [data-theme="light"] .skeleton {
-  background: linear-gradient(90deg, rgba(10,15,36,0.05) 25%, rgba(10,15,36,0.12) 50%, rgba(10,15,36,0.05) 75%);
+  background: linear-gradient(90deg, rgba(10, 15, 36, 0.05) 25%, rgba(10, 15, 36, 0.12) 50%, rgba(10, 15, 36, 0.05) 75%);
   background-size: 200% 100%;
 }
 
@@ -284,11 +343,11 @@
   --border-subtle: rgba(255, 255, 255, 0.1);
 }
 
-[data-theme="light"] .site-footer .navbar__brand > span:not(.navbar__brand-icon) {
+[data-theme="light"] .site-footer .navbar__brand>span:not(.navbar__brand-icon) {
   color: #FFFFFF !important;
 }
 
-[data-theme="light"] .site-footer .navbar__brand > span:not(.navbar__brand-icon) span {
+[data-theme="light"] .site-footer .navbar__brand>span:not(.navbar__brand-icon) span {
   color: var(--amber) !important;
 }
 
@@ -375,6 +434,8 @@
 }
 
 [data-theme="light"] .auth-card {
+  margin-inline: auto !important;
+  align-self: center !important;
   background: #FFFFFF;
   border-color: rgba(10, 15, 36, 0.08);
   box-shadow: 0 20px 50px rgba(10, 15, 36, 0.08), 0 2px 6px rgba(10, 15, 36, 0.04);
@@ -440,6 +501,29 @@
 [data-theme="light"] .auth-back-btn {
   background: #FFFFFF;
   border-color: #CBD5E1;
-  color: #334155;
+  color: #0A0F24;
 }
 
+[data-theme="light"] .auth-checkbox-label {
+  color: #475569;
+}
+
+[data-theme="light"] .auth-legal-link {
+  color: #D97706;
+}
+
+[data-theme="light"] .auth-legal-link:hover {
+  color: #B45309;
+}
+
+[data-theme="light"] .dashboard-header {
+  background: rgba(255, 255, 255, 0.95);
+  border-block-end-color: rgba(10, 15, 36, 0.1);
+}
+
+[data-theme="light"] .dashboard-sidebar__profile,
+[data-theme="light"] .mobile-drawer__profile {
+  background: rgba(10, 15, 36, 0.04);
+  border-color: rgba(10, 15, 36, 0.1);
+}
+}

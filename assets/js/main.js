@@ -29,6 +29,38 @@ function initBusProgressBar() {
 }
 
 /**
+ * Ensure Mobile Drawer contains the 3 quick action controls (Theme, RTL, Login)
+ */
+function ensureMobileDrawerActions() {
+  const drawer = document.querySelector('.mobile-drawer');
+  if (!drawer) return;
+
+  if (!drawer.querySelector('.mobile-drawer__actions')) {
+    const isInPages = document.querySelector('link[href*="../assets/"]') !== null;
+    const loginHref = isInPages ? 'login.html' : 'pages/login.html';
+
+    const actionsDiv = document.createElement('div');
+    actionsDiv.className = 'mobile-drawer__actions';
+    actionsDiv.innerHTML = `
+      <div class="mobile-drawer__toggles">
+        <button type="button" class="icon-btn js-theme-toggle" aria-label="Switch to Light Mode" title="Switch to Light Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+        </button>
+        <button type="button" class="icon-btn js-rtl-toggle" aria-label="Toggle RTL Direction" title="Toggle RTL Direction">RTL</button>
+      </div>
+      <a href="${loginHref}" class="btn btn--primary btn--sm mobile-drawer__login">Login</a>
+    `;
+
+    const header = drawer.querySelector('.mobile-drawer__header');
+    if (header && header.nextSibling) {
+      drawer.insertBefore(actionsDiv, header.nextSibling);
+    } else {
+      drawer.prepend(actionsDiv);
+    }
+  }
+}
+
+/**
  * Dark / Light Theme Controller with System Preference Detection
  * TODO: Customize default theme token in localStorage key 'routego_theme'
  */
@@ -183,10 +215,11 @@ function initScrollEffects() {
     counters.forEach((c) => countObserver.observe(c));
   }
 
-  // Subtle Parallax on Hero Images
+  // Subtle Parallax on Hero Images (Desktop & Tablet)
   const parallaxImgs = document.querySelectorAll('.js-parallax');
   if (parallaxImgs.length > 0 && !prefersReduced) {
     window.addEventListener('scroll', () => {
+      if (window.innerWidth <= 768) return; // Keep hero background stable and aligned on mobile touch viewports
       const scrolled = window.scrollY;
       if (scrolled > 900) return;
       parallaxImgs.forEach((img) => {
@@ -433,12 +466,22 @@ function initCountdowns() {
  */
 function initValidatedForms() {
   document.querySelectorAll('.js-validated-form').forEach((form) => {
+    form.querySelectorAll('[required]').forEach((field) => {
+      const clearErr = () => {
+        field.classList.remove('is-invalid');
+        const g = field.closest('.form-group, .auth-field');
+        if (g) g.classList.remove('has-error');
+      };
+      field.addEventListener('input', clearErr);
+      field.addEventListener('change', clearErr);
+    });
+
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       let isValid = true;
 
       form.querySelectorAll('[required]').forEach((field) => {
-        const grp = field.closest('.form-group');
+        const grp = field.closest('.form-group, .auth-field');
         const val = field.type === 'checkbox' ? field.checked : field.value.trim();
         let fieldValid = Boolean(val);
 
@@ -606,6 +649,7 @@ export function initScrollToTop() {
 
 document.addEventListener('DOMContentLoaded', () => {
   ensureBookingStore();
+  ensureMobileDrawerActions();
   hydrateIcons();
   initBusProgressBar();
   initThemeController();

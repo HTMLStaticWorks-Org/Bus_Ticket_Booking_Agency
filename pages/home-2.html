@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="dark" dir="ltr">
 
 <head>
@@ -68,6 +68,15 @@
         <span data-icon="x"></span>
       </button>
     </div>
+        <div class="mobile-drawer__actions">
+      <div class="mobile-drawer__toggles">
+        <button type="button" class="icon-btn js-theme-toggle" aria-label="Switch to Light Mode" title="Switch to Light Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+        </button>
+        <button type="button" class="icon-btn js-rtl-toggle" aria-label="Toggle RTL Direction" title="Toggle RTL Direction">RTL</button>
+      </div>
+      <a href="login.html" class="btn btn--primary btn--sm mobile-drawer__login">Login</a>
+    </div>
     <nav class="mobile-drawer__list" aria-label="Mobile Links">
       <a href="../index.html" class="mobile-drawer__link">Home</a>
       <a href="home-2.html" class="mobile-drawer__link is-active">Home 2</a>
@@ -76,9 +85,8 @@
       <a href="offers.html" class="mobile-drawer__link">Offers</a>
       <a href="contact.html" class="mobile-drawer__link">Contact</a>
       <a href="login.html" class="mobile-drawer__link">Login</a>
-      <a href="dashboard.html" class="mobile-drawer__link">Traveler Dashboard</a>
+      <a href="dashboard.html" class="mobile-drawer__link">Dashboard</a>
     </nav>
-    <a href="routes-fares.html" class="btn btn--primary btn--full">Book Tickets</a>
   </aside>
 
   <main id="main-content">
@@ -107,7 +115,7 @@
             Step aboard whisper-quiet luxury coaches designed for restful overnight sleep, panoramic highway views, and
             dependable on-time arrivals. Comfortable, reliable, and remarkably affordable intercity travel.
           </p>
-          <div style="display:flex;flex-wrap:wrap;gap:var(--space-2);">
+          <div class="hero-home2__actions">
             <a href="routes-fares.html" class="btn btn--primary btn--lg">
               <span data-icon="compass"></span>
               <span>Explore Routes</span>
@@ -119,8 +127,7 @@
           </div>
         </div>
 
-        <div class="reveal hero-home2__card"
-          style="background:rgba(10,15,36,0.78);backdrop-filter:blur(16px);border:1px solid var(--border-accent);border-radius:var(--radius-md);padding:var(--space-3);">
+        <div class="reveal hero-home2__card">
           <div class="mono"
             style="color:var(--amber);font-size:0.8rem;text-transform:uppercase;margin-block-end:0.5rem;">Tonight's
             Featured Corridor</div>
@@ -941,7 +948,7 @@
         <p class="section__subtitle" style="max-width:640px;margin-inline:auto;margin-block-end:var(--space-4);">
           Search available coaches or browse our full directory of intercity routes and transparent fares.
         </p>
-        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-2);">
+        <div class="cta-actions">
           <a href="#advanced-search" class="btn btn--primary btn--lg">
             <span data-icon="search"></span>
             <span>Search Buses</span>

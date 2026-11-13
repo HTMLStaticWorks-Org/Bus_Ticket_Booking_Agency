@@ -78,18 +78,18 @@ function initDashboard() {
         `;
       } else {
         upcomingContainer.innerHTML = activeTrips.map((b) => `
-          <article class="tilt-card">
-            <span class="tilt-card__badge">Booking ID: ${b.pnr} • ${b.status}</span>
-            <h3 class="tilt-card__title">${b.from} → ${b.to}</h3>
-            <p><strong>${b.operator}</strong> (${b.busType})</p>
-            <div class="tilt-card__meta">
-              <span><strong>Date & Time:</strong> <span class="mono">${b.journeyDate} at ${b.departure}</span></span>
+          <article class="tilt-card tilt-card--booking" style="align-items:flex-start;text-align:start;">
+            <span class="tilt-card__badge" style="align-self:flex-start;margin-inline:0;">Booking ID: <span class="mono" style="white-space:nowrap;">${b.pnr}</span> • ${b.status}</span>
+            <h3 class="tilt-card__title" style="text-align:start;width:100%;">${b.from} → ${b.to}</h3>
+            <p style="text-align:start;width:100%;"><strong>Bus Details:</strong> ${b.operator} (${b.busType})</p>
+            <div class="tilt-card__meta" style="justify-content:flex-start;text-align:start;width:100%;">
+              <span><strong>Date & Time:</strong> <span class="mono" style="white-space:nowrap;">${b.journeyDate} at ${b.departure}</span></span>
               <span>•</span>
-              <span><strong>Seats:</strong> <span class="mono">${(b.seats || []).join(', ')}</span></span>
+              <span><strong>Seats:</strong> <span class="mono" style="white-space:nowrap;">${(b.seats || []).join(', ')}</span></span>
             </div>
-            <p style="font-size:0.86rem;"><strong>Boarding Point:</strong> ${b.boardingPoint}</p>
-            <div class="tilt-card__price">₹${Number(b.amount).toLocaleString('en-IN')}</div>
-            <div class="tilt-card__actions" style="gap:0.75rem;flex-wrap:wrap;">
+            <p style="font-size:0.86rem;text-align:start;width:100%;"><strong>Boarding Point:</strong> ${b.boardingPoint}</p>
+            <div class="tilt-card__price" style="align-self:flex-start;text-align:start;width:100%;">₹${Number(b.amount).toLocaleString('en-IN')}</div>
+            <div class="tilt-card__actions" style="gap:0.75rem;flex-wrap:wrap;justify-content:center;width:100%;">
               <button type="button" class="btn btn--primary btn--sm js-view-ticket" data-pnr="${b.pnr}">
                 <span data-icon="ticket"></span>
                 <span>View Ticket</span>
@@ -124,14 +124,14 @@ function initDashboard() {
     const myBookingsContainer = document.getElementById('myBookingsDetailedContainer');
     if (myBookingsContainer) {
       myBookingsContainer.innerHTML = bookings.map((b) => `
-        <article class="tilt-card">
-          <span class="status-badge ${getStatusBadgeClass(b.status)}" style="margin-block-end:0.65rem;">${b.status} • Payment: ${b.paymentStatus || 'Paid'}</span>
-          <h3 class="tilt-card__title">Ref: <span class="mono">${b.pnr}</span> — ${b.from} to ${b.to}</h3>
-          <p><strong>Bus Details:</strong> ${b.operator} | ${b.busType}</p>
-          <p><strong>Journey:</strong> ${b.journeyDate} (${b.departure} – ${b.arrival}) | <strong>Boarding:</strong> ${b.boardingPoint}</p>
-          <p><strong>Passengers & Seats:</strong> ${(b.passengers || []).map((p) => `${p.name} (${p.age}y, Seat ${p.seat})`).join('; ')}</p>
-          <div class="tilt-card__price">₹${Number(b.amount).toLocaleString('en-IN')}</div>
-          <div class="tilt-card__actions">
+        <article class="tilt-card tilt-card--booking" style="align-items:flex-start;text-align:start;">
+          <span class="status-badge ${getStatusBadgeClass(b.status)}" style="margin-block-end:0.65rem;align-self:flex-start;margin-inline:0;">${b.status} • Payment: ${b.paymentStatus || 'Paid'}</span>
+          <h3 class="tilt-card__title" style="text-align:start;width:100%;font-size:1.15rem;margin-block-end:0.65rem;line-height:1.4;">Ref: <span class="mono" style="white-space:nowrap;">${b.pnr}</span> &mdash; ${b.from} to ${b.to}</h3>
+          <p style="text-align:start;width:100%;margin-block-end:0.45rem;"><strong>Bus Details:</strong> ${b.operator} | ${b.busType}</p>
+          <p style="text-align:start;width:100%;margin-block-end:0.45rem;"><strong>Journey:</strong> <span class="mono" style="white-space:nowrap;">${b.journeyDate}</span> (${b.departure} – ${b.arrival}) | <strong>Boarding:</strong> ${b.boardingPoint}</p>
+          <p style="text-align:start;width:100%;margin-block-end:0.45rem;"><strong>Passengers &amp; Seats:</strong> ${(b.passengers || []).map((p) => `${p.name} (${p.age}y, Seat <span class="mono" style="white-space:nowrap;">${p.seat}</span>)`).join('; ')}</p>
+          <div class="tilt-card__price" style="text-align:start;align-self:flex-start;width:100%;margin-block:0.65rem 0.25rem;">₹${Number(b.amount).toLocaleString('en-IN')}</div>
+          <div class="tilt-card__actions" style="justify-content:center;width:100%;">
             <button type="button" class="btn btn--secondary btn--sm js-view-ticket" data-pnr="${b.pnr}">
               <span data-icon="download"></span>
               <span>Download Ticket</span>
@@ -383,9 +383,9 @@ function initDashboard() {
       effectiveId = panels[0].id;
     }
 
-    // Update active state in sidebar
-    document.querySelectorAll('.dashboard-sidebar__link').forEach((link) => {
-      const href = link.getAttribute('href') || '';
+    // Update active state in sidebar and mobile drawer
+    document.querySelectorAll('.dashboard-sidebar__link, .mobile-drawer__link.dashboard-tab-link, [data-dash-tab]').forEach((link) => {
+      const href = link.getAttribute('href') || link.getAttribute('data-dash-tab') || '';
       const linkId = href.replace(/^#/, '');
       const isActive = linkId === effectiveId;
       link.classList.toggle('is-active', isActive);
@@ -414,13 +414,21 @@ function initDashboard() {
     hydrateIcons();
   }
 
-  // Sidebar navigation click
-  document.querySelectorAll('.dashboard-sidebar__link').forEach((link) => {
-    const href = link.getAttribute('href');
+  // Sidebar & Mobile Drawer navigation click
+  document.querySelectorAll('.dashboard-sidebar__link, .mobile-drawer__link.dashboard-tab-link, [data-dash-tab]').forEach((link) => {
+    const href = link.getAttribute('href') || link.getAttribute('data-dash-tab');
     if (href && href.startsWith('#')) {
       link.addEventListener('click', (e) => {
         e.preventDefault();
         switchDashboardTab(href);
+        // Automatically close the mobile navigation drawer if open
+        const drawer = document.querySelector('.mobile-drawer');
+        if (drawer && drawer.classList.contains('is-open')) {
+          drawer.classList.remove('is-open');
+          drawer.setAttribute('aria-hidden', 'true');
+          document.querySelectorAll('.js-menu-open').forEach((b) => b.setAttribute('aria-expanded', 'false'));
+          document.body.style.overflow = '';
+        }
       });
     }
   });

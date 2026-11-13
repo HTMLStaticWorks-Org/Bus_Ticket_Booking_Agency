@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="dark" dir="ltr">
 
 <head>
@@ -67,6 +67,15 @@
         <span data-icon="x"></span>
       </button>
     </div>
+        <div class="mobile-drawer__actions">
+      <div class="mobile-drawer__toggles">
+        <button type="button" class="icon-btn js-theme-toggle" aria-label="Switch to Light Mode" title="Switch to Light Mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+        </button>
+        <button type="button" class="icon-btn js-rtl-toggle" aria-label="Toggle RTL Direction" title="Toggle RTL Direction">RTL</button>
+      </div>
+      <a href="login.html" class="btn btn--primary btn--sm mobile-drawer__login">Login</a>
+    </div>
     <nav class="mobile-drawer__list" aria-label="Mobile Links">
       <a href="../index.html" class="mobile-drawer__link">Home</a>
       <a href="home-2.html" class="mobile-drawer__link">Home 2</a>
@@ -75,9 +84,8 @@
       <a href="offers.html" class="mobile-drawer__link is-active">Offers</a>
       <a href="contact.html" class="mobile-drawer__link">Contact</a>
       <a href="login.html" class="mobile-drawer__link">Login</a>
-      <a href="dashboard.html" class="mobile-drawer__link">Traveler Dashboard</a>
+      <a href="dashboard.html" class="mobile-drawer__link">Dashboard</a>
     </nav>
-    <a href="routes-fares.html" class="btn btn--primary btn--full">Book Tickets</a>
   </aside>
 
   <main id="main-content">
@@ -110,28 +118,25 @@
     <!-- 2. FEATURED OFFER / MAIN DISCOUNT BANNER -->
     <section class="section" id="featured-offer" aria-labelledby="featured-offer-heading">
       <div class="container">
-        <div class="split-row search-panel reveal" style="padding:var(--space-4);">
+        <div class="split-row search-panel featured-offer-card reveal">
           <div>
             <span class="section__eyebrow">Featured Offer / Main Discount Banner</span>
-            <h2 id="featured-offer-heading" style="margin-block-end:var(--space-1);">Flat 25% OFF on Your First Bus
-              Journey!</h2>
-            <p style="margin-block-end:var(--space-2);">
+            <h2 id="featured-offer-heading">Flat 25% OFF on Your First Bus Journey!</h2>
+            <p>
               New to RouteGo? Experience our flagship multi-axle sleeper or seater coaches with our biggest inaugural
               discount across all South &amp; Central Indian routes.
             </p>
-            <div class="grid-2" style="margin-block-end:var(--space-3);">
-              <div
-                style="background:rgba(255,176,32,0.12);padding:0.85rem;border-radius:var(--radius-sm);border:1px dashed var(--amber);">
-                <small style="color:var(--text-secondary);display:block;">Promo Code</small>
-                <strong class="mono" style="font-size:1.35rem;color:var(--amber);">FIRST25</strong>
+            <div class="grid-2 featured-offer-promo-grid">
+              <div class="featured-offer-promo-box featured-offer-promo-box--amber">
+                <small>Promo Code</small>
+                <strong class="mono">FIRST25</strong>
               </div>
-              <div
-                style="background:rgba(25,211,181,0.12);padding:0.85rem;border-radius:var(--radius-sm);border:1px solid var(--teal);">
-                <small style="color:var(--text-secondary);display:block;">Discount &amp; Cap</small>
-                <strong class="mono" style="font-size:1.15rem;color:var(--teal);">25% OFF (Up to ₹400)</strong>
+              <div class="featured-offer-promo-box featured-offer-promo-box--teal">
+                <small>Discount &amp; Cap</small>
+                <strong class="mono">25% OFF (Up to ₹400)</strong>
               </div>
             </div>
-            <p class="mono" style="font-size:0.84rem;color:var(--text-secondary);margin-block-end:var(--space-3);">
+            <p class="mono featured-offer-meta">
               Minimum Booking Amount: ₹500 • Expiry Date: 31 Dec 2026 • Valid on all AC &amp; Non-AC coaches
             </p>
             <a href="routes-fares.html" class="btn btn--primary btn--lg" data-promo-code="FIRST25">
